@@ -1,0 +1,20 @@
+$primary: #ef5656;
+$charcoal: #6e6e6e;
+$light-charcoal: #d2d2d2;
+
+#section-image {
+    .section-name {
+        position: absolute;
+        bottom: 20%;
+        left: 20%;
+        color: $primary;
+        font-size: 2rem;
+        font-weight: bold;        
+        
+        @media(min-width: 768px) {
+            bottom: 35%;
+            left: 20%;
+            font-size: 2.5rem;
+        }
+    }        
+}

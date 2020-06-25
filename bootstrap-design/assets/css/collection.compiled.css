@@ -1,0 +1,171 @@
+#section-image .section-name {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  color: #ef5656;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  #section-image .section-name {
+    bottom: 35%;
+    left: 20%;
+    font-size: 2.5rem;
+  }
+}
+
+#products #cards .card {
+  border: 0;
+  border-radius: 0;
+  position: relative;
+  transition: .3s all;
+  overflow: hidden;
+}
+
+#products #cards .card .card-img-top {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#products #cards .card .card-body {
+  border: 0;
+  padding: .2rem;
+  text-align: center;
+}
+
+#products #cards .card .card-body .rating {
+  color: #ef5656;
+}
+
+#products #cards .card .img-1 {
+  opacity: 1 !important;
+}
+
+#products #cards .card .img-2 {
+  opacity: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#products #cards .card .product-actions {
+  position: absolute;
+  top: 20%;
+  right: -4rem;
+  transition: all .3s;
+}
+
+#products #cards .card .product-actions i {
+  background: #ef5656;
+  color: white;
+  padding: .6rem;
+  border-radius: 50px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#products #cards .card .product-actions i:hover {
+  background: white;
+  color: #ef5656;
+  border: 1px solid #ef5656;
+}
+
+#products #cards .card .add-to-cart {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 2.8rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #ef5656;
+  color: white;
+  transition: all .3s;
+  opacity: 0;
+}
+
+#products #cards .card:hover .img-1 {
+  opacity: 0 !important;
+}
+
+#products #cards .card:hover .img-2 {
+  opacity: 1 !important;
+}
+
+#products #cards .card:hover .product-actions {
+  right: .5rem;
+}
+
+#products #cards .card:hover .add-to-cart {
+  bottom: 7.5rem;
+  opacity: 1;
+}
+
+#products #cards #pagination .page-item a {
+  color: #ef5656 !important;
+}
+
+#products #cards #pagination .page-item a:hover {
+  background-color: #ef5656;
+  color: white !important;
+}
+
+#accordion-1 .card {
+  border: none;
+  margin-bottom: .5rem;
+}
+
+#accordion-1 .card-body {
+  padding-top: 0.5rem;
+  padding-bottom: 0rem;
+}
+
+#accordion-1 .card-header {
+  background: white;
+  padding: 12px .5rem;
+  border: none;
+}
+
+#accordion-1 .card-header h6 {
+  font-size: .8rem;
+}
+
+#accordion-1 .card-header i {
+  float: right;
+  font-weight: bold;
+}
+
+#accordion-1 .card-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.red {
+  color: red;
+}
+
+.brown {
+  color: brown;
+}
+
+.black {
+  color: black;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+#colors i {
+  border-radius: 0;
+}
+
+#size a {
+  color: initial;
+  border: 1px solid;
+  width: 1.5rem;
+  text-align: center;
+  font-size: .8rem;
+}

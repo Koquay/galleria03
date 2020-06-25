@@ -1,0 +1,398 @@
+<div class="container-fluid">
+    <header>
+        <div class="row d-none d-md-flex py-2" id="header-top-row">
+            <div class="col-9 d-flex">
+                <span>
+                    <i class="fa fa-user mr-1"></i>My Account</span>
+                <span class="ml-4">
+                    <i class="fa fa-heart mr-1"></i>Wish List (0)</span>
+                <span class="ml-4">
+                    <i class="fa fa-cart-arrow-down mr-1"></i>Shopping Cart</span>
+                <span class="ml-4">
+                    <i class="fa fa-share-square-o mr-1"></i>Checkout</span>
+            </div>
+            <div class="col-3 d-flex justify-content-lg-end">
+                <span>USD<i class="fa fa-angle-down ml-1"></i>
+                </span>
+                <span class="ml-4">English<i class="fa fa-angle-down ml-1"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row d-lg-flex justify-content-lg-end px-13">
+            <div class="col text-center col-1 pt-3 d-none" id="currency">
+                <div>
+                    <ul class="list-unstyled">
+                        <li>€ EURO</li>
+                        <li class="my-1">£ POUND</li>
+                        <li>¥ YEN</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-unstyled">
+                        <li>USD</li>
+                        <li class="my-1">UK</li>
+                        <li>GERMAN</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex py-3" id="header-middle-row">
+            <div class="col-12 d-flex d-lg-flex align-items-center col-md-4">
+                <i class="fa fa-phone mr-2"></i>
+                <span>
+                    <span class="d-block font-weight-bold">1 800 444 4444</span>
+                    <span class="d-block">We are opened 9am to 10pm</span>
+                </span>
+            </div>
+            <div class="col-12 d-flex justify-content-center col-md-4 my-3 m-md-0" id="mid-col">
+                <img class="d-lg-flex justify-content-lg-center" src="assets/img/logo.png"/>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-between">
+                        <span>
+                            <i class="fa fa-share-square-o mr-1"></i>Login</span>
+                        <span>
+                            <i class="fa fa-lock mr-1"></i>Register</span>
+                        <span>
+                            <i class="fa fa-shopping-cart mr-1"></i>
+                            <span class="badge badge-primary d-block">4</span>
+                        </span>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend"></div>
+                            <input class="form-control" type="text"/>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col px-0">
+                <nav class="navbar navbar-light navbar-expand-lg d-lg-flex">
+                    <div class="container-fluid">
+                        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-center" id="navcol-1">
+                            <ul class="nav navbar-nav d-lg-flex px-2 mb-2">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" href="#">HOME</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="#">ABOUT</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="#">BLOG</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="#">SHOP</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="#">MENS</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="#">WOMENS</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="#">ACCESSORIES</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="#">PAGES</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="#">CONTACT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
+<div class="carousel slide carousel-fade mt-3 mt-lg-0" data-ride="carousel" id="carousel-1">
+    <div class="carousel-inner" role="listbox" *ngFor="let carousel of homeCarousel">
+        <div class="carousel-item active active">
+            <img class="w-100 d-block" src="assets/img/{{ carousel.image }}" alt="Slide Image"/>
+            <div data-aos="fade" data-aos-duration="500" data-aos-delay="500" class="text-center">
+                <h1 class="mb-0">{{carousel.text1}}</h1>
+                <h2 class="mb-0">{{carousel.text2}}</h2>
+                <h1>{{carousel.text3}}</h1>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+    </ol>
+</div>
+
+<div class="container mt-4" id="mid-container">
+    <section id="collections">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0" *ngFor="let collection of collections">
+                <a [routerLink]="['/collection']">
+                    <div class="card collection">
+                        <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{collection.image}}"/>
+                        <div id="banner" class="text-center">
+                            <h5 class="font-weight-bold mb-0">{{collection.title}}</h5>
+                            <p class="font-weight-bold mb-0">SUMMER COLLECTION</p>
+                        </div>
+                        <div id="overlay"></div>
+                        <i class="fa fa-search"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="product-carousel">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex d-md-flex flex-column align-items-md-center">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link" role="tab" data-toggle="pill" href="#tab-1">RECENT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" role="tab" data-toggle="pill" href="#tab-2">FEATURED</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" role="tab" data-toggle="pill" href="#tab-3">SPECIAL</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" role="tabpanel" id="tab-1">
+                            <div class="row d-flex justify-content-between mt-4">
+                                <div class="col-12 col-md-4 col-lg product" *ngFor="let item of featuredItems.recent">
+                                    <div class="card">
+                                        <img class="card-img-top w-100 d-block img-1" src="assets/img/{{item.image[0]}}">
+                                        <img class="card-img w-100 d-block img-2" src="assets/img/{{item.image[1]}}" style="opacity: 1;">
+                                        <div class="card-body text-center">
+                                            <span class="d-block">{{item.designer}}</span>
+                                            <span class="d-block">
+                                                <span class="mr-2 strike-through">{{item.listPrice | currency:'USD':'symbol-narrow'}}</span>
+                                                <span class="font-weight-bold">{{item.price | currency:'USD':'symbol-narrow'}}</span>
+                                            </span>
+                                            <span>
+                                                <ngb-rating [(rate)]="item.rating" [max]="5">
+                                                    <ng-template let-fill="fill" let-index="index">
+                                                        <span class="star2" [class.filled]="fill === 100">&#9733;</span>
+                                                    </ng-template>
+                                                </ngb-rating>
+                                            </span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <i class="fa fa-search"></i>
+                                            <i class="fa fa-heart"></i>
+                                            <i class="fa fa-exchange"></i>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <span>Add to Cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade  show active" role="tabpanel" id="tab-2">
+                            <div class="row d-flex justify-content-between mt-4">
+                                <div class="col-12 col-md-4 col-lg product" *ngFor="let item of featuredItems.featured">
+                                    <div class="card">
+                                        <img class="card-img-top w-100 d-block img-1" src="assets/img/{{item.image[0]}}">
+                                        <img class="card-img w-100 d-block img-2" src="assets/img/{{item.image[1]}}" style="opacity: 1;">
+                                        <div class="card-body text-center">
+                                            <span class="d-block">{{item.designer}}</span>
+                                            <span class="d-block">
+                                                <span class="mr-2 strike-through">{{item.listPrice | currency:'USD':'symbol-narrow'}}</span>
+                                                <span class="font-weight-bold">{{item.price | currency:'USD':'symbol-narrow'}}</span>
+                                            </span>
+                                            <span>
+                                                <ngb-rating [(rate)]="item.rating" [max]="5">
+                                                    <ng-template let-fill="fill" let-index="index">
+                                                        <span class="star2" [class.filled]="fill === 100">&#9733;</span>
+                                                    </ng-template>
+                                                </ngb-rating>
+                                            </span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <i class="fa fa-search"></i>
+                                            <i class="fa fa-heart"></i>
+                                            <i class="fa fa-exchange"></i>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <span>Add to Cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" role="tabpanel" id="tab-3">
+                            <p>Content for tab 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sale">
+        <div class="row">
+            <div class="col-12 col-md-8 ad mb-4 mb-md-0">
+                <img class="img-fluid" src="assets/img/{{sales[0].image}}">
+                <div class="text-center sale-banner">
+                    <h2 class="font-weight-bold mb-0">
+                        <span class="d-block">{{sales[0].text1}}</span>
+                        <span class="d-block">{{sales[0].text2}}</span>
+                    </h2>
+                </div>
+                <div class="overlay"></div>
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="col-12 col-md-4 ad">
+                <img class="img-fluid" src="assets/img/{{sales[1].image}}">
+                <div class="text-center sale-banner sale-banner-2">
+                    <h2 class="font-weight-bold mb-0">
+                        <span class="d-block">{{sales[1].text1}}</span>
+                        <span class="d-block">{{sales[1].text2}}</span>
+                        <!-- <span class="d-block">35% OFF</span> -->
+                    </h2>
+                </div>
+                <div class="overlay"></div>
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+    </section>
+    <section id="blog-brand">
+        <div class="row d-lg-flex">
+            <div class="col-12 col-md-6">
+                <h5 class="text-center">FROM BLOG</h5>
+                <div class="row mt-4">
+                    <div class="col-12 col-lg-6 blog" *ngFor="let blog of blog.featuredBlogs">
+                        <div class="card border-0">
+                            <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{blog.image}}">
+                            <div class="card-body p-0">
+                                <h4 class="card-title mb-0 mt-1">
+                                    <a href="">{{blog.title}}</a><br></h4>
+                                <p class="card-text mb-0">{{blog.excerpt}}<br></p>
+                                <div class="d-flex justify-content-between align-items-center align-items-lg-center links">
+                                    <a href="#">
+                                        <i class="fa fa-edit mr-1"></i>
+                                        <span>{{blog.author}}</span>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fa fa-calendar mr-1"></i>
+                                        <span>{{blog.numberOfDaysAgo}}
+                                            days ago</span>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fa fa-comments mr-1"></i>
+                                        <span>{{blog.numberOfComments}}
+                                            comments</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="d-flex d-lg-flex align-items-center date text-center">
+                                <h3>
+                                    <span>{{blog.day}}</span>
+                                    <span class="d-block month">{{blog.month}}</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <h5 class="text-center">OUR BRAND</h5>
+                <div class="row d-flex justify-content-center mt-4">
+                    <div class="col-3 d-flex justify-content-center align-items-center company py-1 px-0" *ngFor="let brand of brands">
+                        <img class="img-fluid" src="assets/img/{{brand.image}}">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="row">
+            <div class="col-12 text-center flex-column justify-content-center col-md-4 col-lg" *ngFor="let service of services">
+                <img class="img-fluid mb-2" src="assets/img/{{service.image}}">
+                <h6 class="font-weight-bold">{{service.title}}</h6>
+                <p>{{service.description}}</p>
+            </div>
+
+        </div>
+    </section>
+</div>
+<hr/>
+<div class="container mt-5" id="subscription">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <h5 class="text-center mb-4">{{us.aboutUs.title}}</h5>
+            <p>
+                {{us.aboutUs.text}}<br/>
+            </p>
+        </div>
+        <div class="col-12 col-md-4">
+            <h5 class="text-center mb-4">{{us.followUs.title}}</h5>
+            <div class="d-flex justify-content-between">
+                <i class={{icon}} *ngFor="let icon of us.followUs.socialIcons"></i>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <h5 class="text-center">{{us.newsLetter.title}}</h5>
+            <div class="input-group mt-4">
+                <div class="input-group-prepend"></div>
+                <input class="form-control" type="text"/>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">{{us.newsLetter.buttonText}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr/>
+<div class="container my-5" id="info">
+    <div class="row">
+        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
+            <img src="assets/img/{{footerLinks.facilities.image}}"/>
+            <div id="offices" class="mt-3" *ngFor="let office of footerLinks.facilities.offices">
+                <h5>{{office.title}}</h5>
+                <p class="mb-1">{{office.address}}</p>
+                <p class="mb-1">{{office.phone}}</p>
+                <p class="mb-1">{{office.email}}</p>
+                <p class="mb-1">{{office.website}}</p>
+            </div>
+
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0" *ngFor="let sectionLink of footerLinks.links">
+            <h5>
+                <strong>{{sectionLink.title}}</strong>
+            </h5>
+            <ul class="list-unstyled">
+                <li *ngFor="let link of sectionLink.link">{{link.label}}</li>
+            </ul>
+        </div>
+
+        <div class="col-12">
+            <img class="img-fluid mt-5" src="assets/img/payment.png"/>
+        </div>
+    </div>
+</div>
+<hr/>

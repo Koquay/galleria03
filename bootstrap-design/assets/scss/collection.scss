@@ -1,0 +1,198 @@
+$primary: #ef5656;
+$charcoal: #6e6e6e;
+$light-charcoal: #d2d2d2;
+
+#section-image {
+    .section-name {
+        position: absolute;
+        bottom: 20%;
+        left: 20%;
+        color: $primary;
+        font-size: 2rem;
+        font-weight: bold;        
+        
+        @media(min-width: 768px) {
+            bottom: 35%;
+            left: 20%;
+            font-size: 2.5rem;
+        }
+    }        
+}
+
+#products {
+    #cards {
+        .card {
+            border: 0;
+            border-radius: 0;
+            position: relative;
+            transition: .3s all;
+            overflow: hidden;      
+            
+            .card-img-top {
+                border: 1px solid rgba(0,0,0,.125); 
+                 // z-index: 10; 
+            }
+
+            .card-body {
+                border: 0;
+                padding: .2rem;
+                text-align: center;
+                
+                .rating {
+                    color: $primary;
+                }
+            }
+            
+             .img-1 {
+                opacity: 1 !important;
+            }
+            
+            .img-2 {
+                opacity: 0 !important;
+                position: absolute;
+                top: 0;
+                left: 0;                 
+            }
+            
+            
+            .product-actions {
+                position: absolute;
+                top: 20%;
+                right: -4rem;
+                transition: all .3s;
+                
+                i {
+                    background: $primary;
+                    color: white;
+                    padding: .6rem;
+                    border-radius: 50px;
+                    display: block;
+                    margin-bottom: 1rem;
+                    
+                    &:hover {
+                        background: white;
+                        color: $primary;
+                        border: 1px solid $primary;
+                    }
+                }
+            } 
+            
+            .add-to-cart {
+                position: absolute;
+                bottom: 3.5rem;
+                right: 2.8rem;
+                padding: 1rem;
+                border-radius: 50%;
+                background-color: $primary;
+                color:white;
+                transition: all .3s;
+                opacity: 0;
+                
+            }
+            
+            &:hover {
+                .img-1 {
+                    opacity: 0 !important;
+                }
+            
+                .img-2 {
+                    opacity: 1 !important;
+                }
+                
+                .product-actions {
+                    right: .5rem; 
+                    // transform: translateX(-.5rem);
+                }
+                
+                .add-to-cart {
+                    bottom: 7.5rem;
+                    opacity: 1;
+                }
+            }
+        }
+        
+        #pagination {
+            .page-item {
+                a {
+                    color: $primary !important;  
+                    
+                    &:hover {
+                        background-color: $primary; 
+                        color: white !important; 
+                    }
+                }
+                
+            }
+        }
+    }
+    }
+
+#accordion-1 {
+    .card {
+        border: none;
+        margin-bottom: .5rem;
+    }
+    
+    .card-body {
+        padding-top: 0.5rem;
+         padding-bottom: 0rem;
+    }
+    .card-header {
+        background: white;
+        padding: 12px .5rem;    
+        border: none;
+        
+        h6 {
+            font-size: .8rem;    
+        }
+        
+        i {
+            float: right;
+            font-weight: bold;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.red {
+    color: red;
+}
+
+.brown {
+    color: brown;
+}
+
+.black {
+    color: black;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+#colors {
+    i {
+        border-radius: 0;
+    }
+}
+
+#size {
+    a {
+        color: initial;
+        border: 1px solid;
+        width: 1.5rem;
+        text-align: center;
+        font-size: .8rem;
+    }
+}
+
+
