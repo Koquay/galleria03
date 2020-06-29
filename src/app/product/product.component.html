@@ -4,7 +4,107 @@
     <app-section-header></app-section-header>
 
     <div class='row mt-5'>
-        <div class="col-12 col-md-5">fdsdfsdfdsasdf</div>
-        <div class="col-12 col-md-7">fadsfdsdfsdfsa</div>
+        <div class="col-12 col-md-5">
+            <div class="row">
+                <div class='col-12'>
+                    <div class="card">
+                        <img class="img-fluid w-100" src="assets/img/{{currentImage}}"></div>
+                </div>
+            </div>
+            <div class="row gallery mt-3">
+                <div class='col-4' *ngFor='let image of product.images'>
+                    <a (click)="setCurrentImage(image)">
+                        <div class="card">
+                            <img class="img-fluid w-100" src="assets/img/{{image}}"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 product-detail mt-3 mt-md-0">
+            <h3>{{product.name}}</h3>
+            <h3 class="mr-2 d-inline-block">{{product.price | currency:'USD':'symbol-narrow'}}</h3>
+            <span class="strike-through d-inline-block">{{product.list_price | currency:'USD':'symbol-narrow'}}</span>
+            <div class="">
+                <ngb-rating [(rate)]="product.rating" [max]="5">
+                    <ng-template let-fill="fill" let-index="index">
+                        <span class="star2" [class.filled]="fill === 100">&#9733;</span>
+                    </ng-template>
+                </ngb-rating>
+            </div>
+            <p class="product-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         blanditiis tenetur unde suscipit, quam beatae rerum inventore
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         consectetur, neque doloribus, cupiditate numquam dignissimos
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         laborum fugiat deleniti? Eum quasi quidem quibusdam. consectetur,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         neque doloribus, cupiditate numquam dignissimos laborum fugiat
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         deleniti? Eum quasi quidem quibusdam.
+            </p>
+            <div class='row selections'>
+                <div class='col d-md-flex'>
+                    <div class="input-group mb-3 size-select mr-4">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text black-background" for="inputGroupSelect01">SIZE</label>
+                        </div>
+                        <select class="custom-select text-center">
+                            <option selected="selected"></option>
+                            <option class='text-center' value="S">S</option>
+                            <option class='text-center' value="M">M</option>
+                            <option class='text-center' value="L">L</option>
+                            <option class='text-center' value="XL">xL</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 quantity-select">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text black-background" for="inputGroupSelect01">QUANTITY</label>
+                        </div>
+                        <select class="custom-select text-center">
+                            <option selected="selected"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class='row selections'>
+                <div class='col-12  col-md-8 col-lg-6 d-flex justify-content-between align-items-center'>
+                    <button class="btn black-background" type="button" (click)="addToCart()">ADD TO CART</button>
+                    <i class="fa fa-heart"></i>
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div class='row selections'>
+                <div class='col-12 col-md-8 col-lg-6 d-flex justify-content-between align-items-center'>
+                    <h5>SHARE</h5>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-linkedin"></i>
+                    <i class="fa fa-google-plus"></i>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="full-description">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiatLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.
+                </p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 my-2">
+                <h4>RELATED PRODUCTS</h4>
+            </div>
+            <div class="col-12 col-md mb-2 mb-md-0" *ngFor="let product of relatedProducts">
+                <div class="card">
+                    <img class="img-fluid" src="assets/img/{{product.images[0]}}"></div>
+            </div>
+        </div>
     </div>
 </div>

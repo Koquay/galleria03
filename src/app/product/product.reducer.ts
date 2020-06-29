@@ -1,6 +1,6 @@
 // import { ReducerType } from "../../redux/reducerTypes";
 
-import { ProductsActionTypes } from "../collection/collection.action";
+import { ProductsActionTypes } from "../product/product.action";
 
 export const ProductReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -10,7 +10,22 @@ export const ProductReducer = (state = initialState, action) => {
         products: action.products,
       };
 
-    // case ProductsActionTypes.
+    case ProductsActionTypes.GET_PRODUCT:
+      return {
+        ...state,
+        product: state.products.find(
+          (product) => product._id === action.productId
+        ),
+      };
+
+    case ProductsActionTypes.GET_RELATED_PRODUCTS:
+      return {
+        ...state,
+        relatedProducts: [...state.products]
+          .filter((relProduct) => relProduct._id !== state.product._id)
+          .sort()
+          .slice(0, 5),
+      };
 
     case ProductsActionTypes.ADD_MINMAX_PRICES:
       let minMaxPrices;
@@ -37,6 +52,17 @@ export const ProductReducer = (state = initialState, action) => {
   }
 };
 
+const getRelatedProducts = (state) => {
+  let relatedProducts = [];
+  let x = 0;
+
+  for (let product of state.products.sort()) {
+    relatedProducts.push(product);
+    if (++x === 4) break;
+  }
+  return relatedProducts;
+};
+
 const setMinMaxPrices = (products) => {
   let priceArray = [];
 
@@ -53,6 +79,7 @@ const setMinMaxPrices = (products) => {
 
 const initialState = {
   products: [],
-  product: {},
+  product: { _id: 0 },
+  relatedProducts: [],
   minMaxPrices: { minPrice: 0, maxPrice: 0 },
 };

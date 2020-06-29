@@ -2,12 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { CollectionService } from "./collection.service";
 import { Store } from "@ngrx/store";
 
-import {
-  GetFilters,
-  SetItemChecked,
-  GetMinMaxPricesAction,
-} from "./collection.action";
+import { GetFilters, SetItemChecked } from "./collection.action";
 import { collectionFilters } from "./collection.filters";
+import { GetMinMaxPricesAction } from "../product/product.action";
 
 @Component({
   selector: "app-collection",

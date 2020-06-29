@@ -2,7 +2,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { tap, catchError } from "rxjs/operators";
 import { Store } from "@ngrx/store";
-import { AddProductAction, AddMinMaxPricesAction } from "./collection.action";
+import {
+  AddProductAction,
+  AddMinMaxPricesAction,
+} from "../product/product.action";
 
 @Injectable({
   providedIn: "root",

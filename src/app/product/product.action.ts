@@ -5,6 +5,7 @@ export enum ProductsActionTypes {
   ADD_MINMAX_PRICES = "ADD_MINMAX_PRICES",
   GET_MINMAX_PRICES = "GET_MINMAX_PRICES",
   GET_PRODUCT = "GET_PRODUCT",
+  GET_RELATED_PRODUCTS = "GET_RELATED_PRODUCTS",
 }
 
 export class AddProductAction implements Action {
@@ -17,6 +18,12 @@ export class GetProductAction implements Action {
   readonly type = ProductsActionTypes.GET_PRODUCT;
 
   constructor(public productId) {}
+}
+
+export class GetRelatedProductsAction implements Action {
+  readonly type = ProductsActionTypes.GET_RELATED_PRODUCTS;
+
+  constructor() {}
 }
 
 export class AddMinMaxPricesAction implements Action {
@@ -35,4 +42,5 @@ export type ProductsActionUnion =
   | AddProductAction
   | AddMinMaxPricesAction
   | GetMinMaxPricesAction
-  | GetProductAction;
+  | GetProductAction
+  | GetRelatedProductsAction;
