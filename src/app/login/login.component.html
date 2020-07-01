@@ -1,0 +1,74 @@
+<app-header></app-header>
+
+<div class="container">
+  <app-section-header></app-section-header>
+
+  <form class="mt-4 px-10" #loginform="ngForm">
+    <div class="row">
+      <div class="col">
+        <h4 class="page-title" style="width: 16rem;">Log Into Your Account</h4>
+      </div>
+    </div>
+    <!-- <div class="form-row mt-4">
+            <div class="col-12">
+                <label>Name</label>
+                <input class="form-control" type="text" name='name' required name="name" [(ngModel)]="payload.name" #name="ngModel">
+                <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors.required" class="c-red">
+                        Name is required
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <div class="form-row mt-4">
+      <div class="col-12">
+        <label>Email</label>
+        <input
+          class="form-control"
+          type="text"
+          name="email"
+          required
+          name="email"
+          [(ngModel)]="payload.email"
+          #email="ngModel"
+        />
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors.required" class="c-red">
+            Email is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row mt-2">
+      <div class="col-12">
+        <label>Password</label>
+        <input
+          class="form-control"
+          type="password"
+          name="password"
+          required
+          name="password"
+          [(ngModel)]="payload.password"
+          #password="ngModel"
+        />
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div *ngIf="password.errors.required" class="c-red">
+            Password is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row mt-4">
+      <div class="col-12">
+        <button
+          class="btn button login-btn"
+          type="button"
+          (click)="login()"
+          [disabled]="!loginform.form.valid"
+        >
+          LOGIN
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

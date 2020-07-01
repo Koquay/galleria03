@@ -7,8 +7,9 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { reducers } from "./ngrx/reducers";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { SharedModule } from "./shared/shared.module";
+import { RequestInterceptor } from "./shared/interceptors/request.interceptor";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -20,7 +21,9 @@ import { SharedModule } from "./shared/shared.module";
     HttpClientModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

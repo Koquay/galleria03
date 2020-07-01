@@ -1,0 +1,24 @@
+$primary: #ef5656;
+$charcoal: #6e6e6e;
+$light-charcoal: #d2d2d2;
+
+.c-red {
+    color: #B00020 !important;
+}
+
+.page-title {
+    border-bottom: 3px solid $primary;
+}
+
+.px-10 {
+    padding-left: 20rem;
+    padding-right: 20rem;
+}
+
+.login-btn {
+    background-color: $primary;
+    color: white;
+    font-size: bold;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}

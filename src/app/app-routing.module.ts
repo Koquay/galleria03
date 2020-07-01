@@ -19,9 +19,15 @@ const routes: Routes = [
     data: { breadcrumb: "Product" },
   },
   {
+    path: "login",
+    loadChildren: "./login/login.module#LoginModule",
+    data: { breadcrumb: "LOGIN" },
+  },
+
+  {
     path: "",
     pathMatch: "prefix",
-    redirectTo: "home",
+    redirectTo: "login",
   },
 ];
 
