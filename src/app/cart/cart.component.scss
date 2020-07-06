@@ -1,0 +1,15 @@
+.c-red {
+    color: red ;
+} 
+
+.cart-table {
+    text-align: center;
+
+    @media(min-width: 768px) {
+        text-align: initial;
+    }
+}
+
+.action-btn {
+    min-width: 11.6rem;
+}

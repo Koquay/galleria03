@@ -6,8 +6,10 @@
                     <i class="fa fa-user mr-1"></i>My Account</span>
                 <span class="ml-4">
                     <i class="fa fa-heart mr-1"></i>Wish List (0)</span>
-                <span class="ml-4">
-                    <i class="fa fa-cart-arrow-down mr-1"></i>Shopping Cart</span>
+                <a [routerLink]="['/cart']">
+                    <span class="ml-4">
+                        <i class="fa fa-cart-arrow-down mr-1"></i>Shopping Cart</span>
+                </a>
                 <span class="ml-4">
                     <i class="fa fa-share-square-o mr-1"></i>Checkout</span>
             </div>
@@ -44,76 +46,78 @@
                     <span class="d-block">We are opened 9am to 10pm</span>
                 </span>
             </div>
-            <div class="col-12 d-flex justify-content-center col-md-4 my-3 m-md-0" id="mid-col"><img class="d-lg-flex justify-content-lg-center" src="assets/img/logo.png"></div>
-            <div class="col-12 col-md-4">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-between">
-                        <a [routerLink]="['/login']">
+            <div class="col-12 d-flex justify-content-center col-md-4 my-3 m-md-0" id="mid-col">
+                <img class="d-lg-flex justify-content-lg-center" src="assets/img/logo.png"></div>
+                <div class="col-12 col-md-4">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                            <a [routerLink]="['/login']">
+                                <span>
+                                    <i class="fa fa-share-square-o mr-1"></i>Login</span>
+                            </a>
                             <span>
-                                <i class="fa fa-share-square-o mr-1"></i>Login</span>
-                        </a>
-                        <span>
-                            <i class="fa fa-lock mr-1"></i>Register</span>
-                        <span>
-                            <i class="fa fa-shopping-cart mr-1"></i>
-                            <span class="badge badge-primary d-block">4</span>
-                        </span>
-                    </div>
-                    <div class="col-12 mt-3">
-                        <div class="input-group">
-                            <div class="input-group-prepend"></div><input class="form-control" type="text">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
+                                <i class="fa fa-lock mr-1"></i>Register</span>
+                            <span>
+                                <i class="fa fa-shopping-cart mr-1"></i>
+                                <span class="badge badge-primary d-block">4</span>
+                            </span>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <input class="form-control" type="text">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col px-0">
-                <nav class="navbar navbar-light navbar-expand-lg d-lg-flex">
-                    <div class="container-fluid">
-                        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-center" id="navcol-1">
-                            <ul class="nav navbar-nav d-lg-flex px-2 mb-2">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" href="#">HOME</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">ABOUT</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">BLOG</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">SHOP</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">MENS</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">WOMENS</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">ACCESSORIES</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">PAGES</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">CONTACT</a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="row">
+                    <div class="col px-0">
+                        <nav class="navbar navbar-light navbar-expand-lg d-lg-flex">
+                            <div class="container-fluid">
+                                <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <div class="collapse navbar-collapse d-lg-flex justify-content-lg-center" id="navcol-1">
+                                    <ul class="nav navbar-nav d-lg-flex px-2 mb-2">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" href="#">HOME</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="#">ABOUT</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="#">BLOG</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="#">SHOP</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="#">MENS</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="#">WOMENS</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="#">ACCESSORIES</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="#">PAGES</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" href="#">CONTACT</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </header>
         </div>
-    </header>
-</div>

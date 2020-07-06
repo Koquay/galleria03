@@ -35,7 +35,10 @@ exports.login = async (req, res) => {
 
       console.log("token", token);
 
-      const cart = await Cart.findOne({ user: user._id });
+      const cart = await Cart.findOne({ user: user._id }).populate({
+        path: 'products.product',
+        model: 'Product'
+      });
       console.log("cart", cart);
 
       res.status(200).json({ token, cart });

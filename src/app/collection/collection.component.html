@@ -1,362 +1,246 @@
-<div class="container-fluid">
-    <header>
-        <div class="row d-none d-md-flex py-2" id="header-top-row">
-            <div class="col-9 d-flex">
-                <span>
-                    <i class="fa fa-user mr-1"></i>My Account</span>
-                <span class="ml-4">
-                    <i class="fa fa-heart mr-1"></i>Wish List (0)</span>
-                <span class="ml-4">
-                    <i class="fa fa-cart-arrow-down mr-1"></i>Shopping Cart</span>
-                <span class="ml-4">
-                    <i class="fa fa-share-square-o mr-1"></i>Checkout</span>
-            </div>
-            <div class="col-3 d-flex justify-content-lg-end">
-                <span>USD<i class="fa fa-angle-down ml-1"></i>
-                </span>
-                <span class="ml-4">English<i class="fa fa-angle-down ml-1"></i>
-                </span>
-            </div>
-        </div>
-        <div class="row d-lg-flex justify-content-lg-end px-13">
-            <div class="col text-center col-1 pt-3 d-none" id="currency">
-                <div>
-                    <ul class="list-unstyled">
-                        <li>€ EURO</li>
-                        <li class="my-1">£ POUND</li>
-                        <li>¥ YEN</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-unstyled">
-                        <li>USD</li>
-                        <li class="my-1">UK</li>
-                        <li>GERMAN</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row d-flex py-3" id="header-middle-row">
-            <div class="col-12 d-flex d-lg-flex align-items-center col-md-4">
-                <i class="fa fa-phone mr-2"></i>
-                <span>
-                    <span class="d-block font-weight-bold">1 800 444 4444</span>
-                    <span class="d-block">We are opened 9am to 10pm</span>
-                </span>
-            </div>
-            <div class="col-12 d-flex justify-content-center col-md-4 my-3 m-md-0" id="mid-col"><img class="d-lg-flex justify-content-lg-center" src="assets/img/logo.png"></div>
-            <div class="col-12 col-md-4">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-between">
-                        <span>
-                            <i class="fa fa-share-square-o mr-1"></i>Login</span>
-                        <span>
-                            <i class="fa fa-lock mr-1"></i>Register</span>
-                        <span>
-                            <i class="fa fa-shopping-cart mr-1"></i>
-                            <span class="badge badge-primary d-block">4</span>
-                        </span>
-                    </div>
-                    <div class="col-12 mt-3">
-                        <div class="input-group">
-                            <div class="input-group-prepend"></div><input class="form-control" type="text">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
+<app-header></app-header>
+        <div class="container">
+            <section id="section-image">
+                <div class="row mt-3 mt-lg-0">
+                    <div class="col">
+                        <img class="img-fluid" src="assets/img/blog-main-1.jpg">
+                            <div class="section-name">
+                                <span>SHOP</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col px-0">
-                <nav class="navbar navbar-light navbar-expand-lg d-lg-flex">
-                    <div class="container-fluid">
-                        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-center" id="navcol-1">
-                            <ul class="nav navbar-nav d-lg-flex px-2 mb-2">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" href="#">HOME</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">ABOUT</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">BLOG</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">SHOP</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">MENS</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">WOMENS</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">ACCESSORIES</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">PAGES</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="#">CONTACT</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
-</div>
-<div class="container">
-    <section id="section-image">
-        <div class="row mt-3 mt-lg-0">
-            <div class="col"><img class="img-fluid" src="assets/img/blog-main-1.jpg">
-                <div class="section-name">
-                    <span>SHOP</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="products" class="mt-4">
-        <div class="row">
-            <div class="col-12 col-md-2">
-                <div class="row">
-                    <div class="col-12">
-                        <h6 class="font-weight-bold">CATEGORIES</h6>
-                        <hr class="mt-0">
-                    </div>
-                    <div class="col pr-0">
-                        <div role="tablist" id="accordion-1">
-                            <div class="card" *ngFor="let category of filters.categories.category">
-                                <div class="card-header py-0" role="tab">
-                                    <h6 class="mb-0">
-                                        <a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-1" href={{category.href}} class="w-100 font-weight-bold">
-                                            {{category.name}}<i class="fa fa-plus"></i>
-                                        </a>
-                                    </h6>
-                                </div>
-                                <div class={{category.class}} role="tabpanel" data-parent="#accordion-1">
-                                    <div class="card-body py-1">
-                                        <ul class="list-unstyled">
-                                            <li class="pb-1" *ngFor="let item of category.items">
-                                                <input type="checkbox" (change)="handleCategoryChange(category.name, item)" id={{item.name}}/>
-                                                <label class="ml-1">{{item.name}}<br/></label>
-                                            </li>
-                                        </ul>
+                </section>
+                <section id="products" class="mt-4">
+                    <div class="row">
+                        <div class="col-12 col-md-2">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6 class="font-weight-bold">CATEGORIES</h6>
+                                    <hr class="mt-0"></div>
+                                    <div class="col pr-0">
+                                        <div role="tablist" id="accordion-1">
+                                            <div class="card" *ngFor="let category of filters.categories.category">
+                                                <div class="card-header py-0" role="tab">
+                                                    <h6 class="mb-0">
+                                                        <a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-1" href={{category.href}} class="w-100 font-weight-bold">
+                                                            {{category.name}}<i class="fa fa-plus"></i>
+                                                        </a>
+                                                    </h6>
+                                                </div>
+                                                <div class={{category.class}} role="tabpanel" data-parent="#accordion-1">
+                                                    <div class="card-body py-1">
+                                                        <ul class="list-unstyled">
+                                                            <li class="pb-1" *ngFor="let item of category.items">
+                                                                <input type="checkbox" (change)="handleCategoryChange(category.name, item)" id={{item.name}}/>
+                                                                <label class="ml-1">{{item.name}}<br/></label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr></div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col">
-                                <h6 class="font-weight-bold">PRICE</h6>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <input #changeValue type="range" data-toggle="tooltip" min={{minMaxPrices.minPrice}} max={{minMaxPrices.maxPrice}} data-bs-tooltip="" classname="custom-range w-100" title="$150" (change)="handlePriceChange(changeValue.value)"/>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col d-flex justify-content-between">
-                                <span>${{minMaxPrices.minPrice}}</span>
-                                <span>${{minMaxPrices.maxPrice}}</span>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <h6 class="font-weight-bold">
-                            <strong>COLOR</strong>
-                        </h6>
-                        <div class="row">
-                            <div class="col d-flex justify-content-between" id="colors">
-                                <a href="#">
-                                    <i class="fa fa-square red"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-square brown"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-square black"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-square blue"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-square green"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <h6 class="font-weight-bold">
-                            <strong>SIZE</strong>
-                        </h6>
-                        <div class="row">
-                            <div class="col d-flex justify-content-between" id="size">
-                                <a href="#">
-                                    <span>XS</span>
-                                </a>
-                                <a href="#">
-                                    <span>S</span>
-                                </a>
-                                <a href="#">
-                                    <span>M</span>
-                                </a>
-                                <a href="#">
-                                    <span>L</span>
-                                </a>
-                                <a href="#">
-                                    <span>XL</span>
-                                </a>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="col" id="cards">
-                <div class="row">
-                    <div class="col-12 col-md-4 col-lg-3 mb-2 mb-md-4" *ngFor='let product of products'>
-                        <a [routerLink]="['/product', product._id]">
-                            <div class="card">
-                                <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{product.images[0]}}">
-                                <img class="card-img w-100 d-block img-2" src="assets/img/{{product.images[0]}}" style="opacity: 1;">
-                                <div class="card-body">
-                                    <span class="d-block">{{product.name}}</span>
-                                    <span class="d-inline-block mr-2 strike-through">
-                                        {{product.list_price | currency:'USD':'symbol-narrow'}}
-                                    </span>
-                                    <span class="d-inline-block font-weight-bold">
-                                        {{product.price | currency:'USD':'symbol-narrow'}}
-                                    </span>
-                                    <div class="rating">
-                                        <ngb-rating [(rate)]="product.rating" [max]="5">
-                                            <ng-template let-fill="fill" let-index="index">
-                                                <span class="star2" [class.filled]="fill === 100">&#9733;</span>
-                                            </ng-template>
-                                        </ngb-rating>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h6 class="font-weight-bold">PRICE</h6>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input #changeValue type="range" data-toggle="tooltip" min={{minMaxPrices.minPrice}} max={{minMaxPrices.maxPrice}} data-bs-tooltip="" classname="custom-range w-100" title="$150" (change)="handlePriceChange(changeValue.value)"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col d-flex justify-content-between">
+                                                    <span>${{minMaxPrices.minPrice}}</span>
+                                                    <span>${{minMaxPrices.maxPrice}}</span>
+                                                </div>
+                                            </div>
+                                            <hr></div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col">
+                                                <h6 class="font-weight-bold">
+                                                    <strong>COLOR</strong>
+                                                </h6>
+                                                <div class="row">
+                                                    <div class="col d-flex justify-content-between" id="colors">
+                                                        <a href="#">
+                                                            <i class="fa fa-square red"></i>
+                                                        </a>
+                                                        <a href="#">
+                                                            <i class="fa fa-square brown"></i>
+                                                        </a>
+                                                        <a href="#">
+                                                            <i class="fa fa-square black"></i>
+                                                        </a>
+                                                        <a href="#">
+                                                            <i class="fa fa-square blue"></i>
+                                                        </a>
+                                                        <a href="#">
+                                                            <i class="fa fa-square green"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <hr></div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col">
+                                                    <h6 class="font-weight-bold">
+                                                        <strong>SIZE</strong>
+                                                    </h6>
+                                                    <div class="row">
+                                                        <div class="col d-flex justify-content-between" id="size">
+                                                            <a href="#">
+                                                                <span>XS</span>
+                                                            </a>
+                                                            <a href="#">
+                                                                <span>S</span>
+                                                            </a>
+                                                            <a href="#">
+                                                                <span>M</span>
+                                                            </a>
+                                                            <a href="#">
+                                                                <span>L</span>
+                                                            </a>
+                                                            <a href="#">
+                                                                <span>XL</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <hr></div>
+                                                </div>
+                                            </div>
+                                            <div class="col" id="cards">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-4 col-lg-3 mb-2 mb-md-4" *ngFor='let product of products'>
+                                                        <a [routerLink]="['/product', product._id]">
+                                                            <div class="card">
+                                                                <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{product.images[0]}}">
+                                                                    <img class="card-img w-100 d-block img-2" src="assets/img/{{product.images[0]}}" style="opacity: 1;">
+                                                                        <div class="card-body">
+                                                                            <span class="d-block">{{product.name}}</span>
+                                                                            <span class="d-inline-block mr-2 strike-through">
+                                                                                {{product.list_price | currency:'USD':'symbol-narrow'}}
+                                                                            </span>
+                                                                            <span class="d-inline-block font-weight-bold">
+                                                                                {{product.price | currency:'USD':'symbol-narrow'}}
+                                                                            </span>
+                                                                            <div class="rating">
+                                                                                <ngb-rating [(rate)]="product.rating" [max]="5">
+                                                                                    <ng-template let-fill="fill" let-index="index">
+                                                                                        <span class="star2" [class.filled]="fill === 100">&#9733;</span>
+                                                                                    </ng-template>
+                                                                                </ngb-rating>
 
-                                    </div>
-                                </div>
-                                <div class="product-actions">
-                                    <i class="fa fa-search"></i>
-                                    <i class="fa fa-heart"></i>
-                                    <i class="fa fa-cart-arrow-down"></i>
-                                </div>
-                                <div class="add-to-cart d-none">
-                                    <span>Add to Cart</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col" id="pagination">
-                        <nav class="d-lg-flex justify-content-lg-center">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">«</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">4</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">5</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">»</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<div class="container my-5" id="info">
-    <div class="row">
-        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0"><img src="assets/img/bottom-logo.png">
-            <div id="offices" class="mt-3">
-                <h5>HEAD OFFICE</h5>
-                <p class="mb-1">8901 Marmora Raod, Glasgow, D04 89GR</p>
-                <p class="mb-1">Telephone : (801) 4256 - 9856</p>
-                <p class="mb-1">Email : info@galleria.com</p>
-                <p class="mb-1">Web : www.galleria.com</p>
-            </div>
-            <div id="offices" class="mt-3">
-                <h5>WAREHOUSE</h5>
-                <p class="mb-1">8901 Marmora Raod, Glasgow, D04 89GR</p>
-                <p class="mb-1">Telephone : (801) 4256 - 9856</p>
-                <p class="mb-1">Email : info@galleria.com</p>
-                <p class="mb-1">Web : www.galleria.com</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
-            <h5>
-                <strong>MY ACCOUNT</strong>
-            </h5>
-            <ul class="list-unstyled">
-                <li>My Account</li>
-                <li>Shopping cart</li>
-                <li>Checkout</li>
-                <li>Login</li>
-                <li>Register</li>
-                <li>Discount</li>
-            </ul>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
-            <h5>
-                <strong>INFORMATION</strong><br></h5>
-            <ul class="list-unstyled">
-                <li>Shipping &amp; Returns</li>
-                <li>Online Order</li>
-                <li>About Our Shop</li>
-                <li>Secure Shopping</li>
-                <li>Privacy &amp; Policy</li>
-                <li>Terms &amp; Conditions</li>
-            </ul>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
-            <h5>
-                <strong>OPENING TIME</strong><br></h5>
-            <ul class="list-unstyled">
-                <li>Monday - Friday 8.00 - 18.00</li>
-                <li>Saturday 9.00 - 21.00</li>
-                <li>Sunday 10.00 - 21.00</li>
-            </ul><img class="img-fluid mt-5" src="assets/img/payment.png"></div>
-    </div>
-</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-actions">
+                                                                            <i class="fa fa-search"></i>
+                                                                            <i class="fa fa-heart"></i>
+                                                                            <i class="fa fa-cart-arrow-down"></i>
+                                                                        </div>
+                                                                        <div class="add-to-cart d-none">
+                                                                            <span>Add to Cart</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col" id="pagination">
+                                                                <nav class="d-lg-flex justify-content-lg-center">
+                                                                    <ul class="pagination">
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                                <span aria-hidden="true">«</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#">1</a>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#">2</a>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#">3</a>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#">4</a>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#">5</a>
+                                                                        </li>
+                                                                        <li class="page-item">
+                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                <span aria-hidden="true">»</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div class="container my-5" id="info">
+                                            <div class="row">
+                                                <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
+                                                    <img src="assets/img/bottom-logo.png">
+                                                        <div id="offices" class="mt-3">
+                                                            <h5>HEAD OFFICE</h5>
+                                                            <p class="mb-1">8901 Marmora Raod, Glasgow, D04 89GR</p>
+                                                            <p class="mb-1">Telephone : (801) 4256 - 9856</p>
+                                                            <p class="mb-1">Email : info@galleria.com</p>
+                                                            <p class="mb-1">Web : www.galleria.com</p>
+                                                        </div>
+                                                        <div id="offices" class="mt-3">
+                                                            <h5>WAREHOUSE</h5>
+                                                            <p class="mb-1">8901 Marmora Raod, Glasgow, D04 89GR</p>
+                                                            <p class="mb-1">Telephone : (801) 4256 - 9856</p>
+                                                            <p class="mb-1">Email : info@galleria.com</p>
+                                                            <p class="mb-1">Web : www.galleria.com</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
+                                                        <h5>
+                                                            <strong>MY ACCOUNT</strong>
+                                                        </h5>
+                                                        <ul class="list-unstyled">
+                                                            <li>My Account</li>
+                                                            <li>Shopping cart</li>
+                                                            <li>Checkout</li>
+                                                            <li>Login</li>
+                                                            <li>Register</li>
+                                                            <li>Discount</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
+                                                        <h5>
+                                                            <strong>INFORMATION</strong>
+                                                            <br></h5>
+                                                            <ul class="list-unstyled">
+                                                                <li>Shipping &amp; Returns</li>
+                                                                <li>Online Order</li>
+                                                                <li>About Our Shop</li>
+                                                                <li>Secure Shopping</li>
+                                                                <li>Privacy &amp; Policy</li>
+                                                                <li>Terms &amp; Conditions</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
+                                                            <h5>
+                                                                <strong>OPENING TIME</strong>
+                                                                <br></h5>
+                                                                <ul class="list-unstyled">
+                                                                    <li>Monday - Friday 8.00 - 18.00</li>
+                                                                    <li>Saturday 9.00 - 21.00</li>
+                                                                    <li>Sunday 10.00 - 21.00</li>
+                                                                </ul>
+                                                                <img class="img-fluid mt-5" src="assets/img/payment.png"></div>
+                                                            </div>
+                                                        </div>

@@ -23,6 +23,11 @@ const routes: Routes = [
     loadChildren: "./login/login.module#LoginModule",
     data: { breadcrumb: "LOGIN" },
   },
+  {
+    path: "cart",
+    loadChildren: "./cart/cart.module#CartModule",
+    data: { breadcrumb: "CART" },
+  },
 
   {
     path: "",
