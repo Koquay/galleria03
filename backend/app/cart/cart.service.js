@@ -6,8 +6,37 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const Cart = require("mongoose").model("Cart");
 const Product = require("mongoose").model("Product");
+const chalk = require('chalk');
 
 const { ObjectId } = mongoose.Types;
+
+exports.deleteItem = async (req, res) => {
+  if(!('authorization' in req.headers)) {
+    console.log('authorization not found')
+    res.status(402).send('No access token')
+  }
+  const {productId, size} = req.query;
+  console.log('productId, size', productId, size)
+
+  const {userId} = await jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+
+  console.log(chalk.blue('userId', userId))
+
+  try {
+    const cart = await Cart.findOneAndUpdate(
+      {user: userId},
+      {$pull: {products: {product: productId, size: size}}},
+      {new: true}
+    ).populate({
+      path: 'products.product',
+      model: 'Product'
+    });
+    res.status(201).json(cart)
+  } catch(error) {
+    console.error(error);
+    res.status(500).send('ERROR DELETING ITEM')
+  }
+}
 
 exports.addToCart = async (req, res) => {
   if (!("authorization" in req.headers)) {
@@ -52,7 +81,10 @@ exports.addToCart = async (req, res) => {
         { _id: cart._id, "products.product": productId },
         { $inc: { "products.$.quantity": quantity } },
         { new: true }
-      );
+      ).populate({
+        path: 'products.product',
+        model: 'Product'
+      });
     } else {
       const newProduct = { product: productId, quantity, size };
 
@@ -60,7 +92,10 @@ exports.addToCart = async (req, res) => {
         { _id: cart._id },
         { $addToSet: { products: newProduct } },
         { new: true }
-      );
+      ).populate({
+        path: 'products.product',
+        model: 'Product'
+      });
     }
 
     return res.status(200).json(updatedCart);

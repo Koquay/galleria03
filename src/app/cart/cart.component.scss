@@ -1,6 +1,11 @@
+$primary: #ef5656;
+$charcoal: #6e6e6e;
+$light-charcoal: #d2d2d2;
+
+
 .c-red {
-    color: red ;
-} 
+    color: red;
+}
 
 .cart-table {
     text-align: center;
@@ -12,4 +17,16 @@
 
 .action-btn {
     min-width: 11.6rem;
+}
+
+.black-btn {
+    background: #252525 none repeat scroll 0 0;
+    color: #fefefe;
+    font-family: "montserratlight";
+    padding: 9px 20px;
+    text-transform: uppercase;
+
+    &:hover {
+        background: $primary
+    }
 }

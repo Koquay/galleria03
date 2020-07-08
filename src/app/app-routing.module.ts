@@ -28,7 +28,11 @@ const routes: Routes = [
     loadChildren: "./cart/cart.module#CartModule",
     data: { breadcrumb: "CART" },
   },
-
+  {
+    path: "checkout",
+    loadChildren: "./checkout/checkout.module#CheckoutModule",
+    data: { breadcrumb: "CHECKOUT" },
+  },
   {
     path: "",
     pathMatch: "prefix",

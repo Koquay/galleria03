@@ -9,7 +9,7 @@
             <div class="col-md-2 text-md-right">PRICE</div>
             <div class="col-md-2 text-md-center">QUANTITY</div>
             <div class="col-md-2 text-md-right">TOTAL</div>
-            <!-- <div class="col">DELETE</div> -->
+            
         </div>
     </div>
     <div class="section mt-4 cart-table" *ngFor="let item of cart.products">
@@ -23,7 +23,7 @@
                     {{item.size}}</span>
 
                 <span class='d-block'>
-                    <a (click)="removeItem(item.product._id)">
+                    <a (click)="deleteItem(item.product._id, item.size)">
                         <i class="fa fa-trash-o c-red"></i>
                     </a>
                 </span>
@@ -45,11 +45,6 @@
                 <span>{{item.product.price * item.quantity | currency:'USD':'symbol-narrow'}}</span>
             </div>
 
-            <!-- <div class="col-12 col-md-2">
-                                                                                                                                                                            <a (click)="removeItem(item.product._id)">
-                                                                                                                                                                                <i class="fa fa-trash-o c-red"></i>
-                                                                                                                                                                            </a>
-                                                                                                                                                                        </div> -->
         </div>
     </div>
 
@@ -61,7 +56,9 @@
                         <button type="button" class="btn btn-outline-secondary action-btn">CONTINUE SHOPPING</button>
                     </div>
                     <div class="col-12 col-md-6 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-secondary action-btn">CLEAR CART</button>
+                        <button type="button" class="btn btn-outline-secondary action-btn"
+                            (click)="clearCart()"
+                        >CLEAR CART</button>
                     </div>
                 </div>
             </div>
@@ -71,7 +68,7 @@
                         <span>Tax</span>
                     </div>
                     <div class="col-6 col-md-2 d-flex justify-content-center">
-                        <span>$420</span>
+                        <span>{{getTax() | currency:'USD':'symbol-narrow'}}</span>
                     </div>
                 </div>
                 <div class="row mb-2 d-flex justify-content-center justify-content-md-end">
@@ -79,7 +76,7 @@
                         <span>Subtotal</span>
                     </div>
                     <div class="col-6 col-md-2 d-flex justify-content-center ">
-                        <span>$420</span>
+                        <span>{{getSubtotal() | currency:'USD':'symbol-narrow'}}</span>
                     </div>
                 </div>
                 <div class="row mb-2 d-flex justify-content-center justify-content-md-end">
@@ -87,12 +84,13 @@
                         <span class='font-weight-bold'>Total</span>
                     </div>
                     <div class="col-6 col-md-2 d-flex justify-content-center ">
-                        <span class='font-weight-bold c-red'>$420</span>
+                        <span class='font-weight-bold c-red'>{{getTotal() | currency:'USD':'symbol-narrow'}}</span>
                     </div>
                 </div>
                 <div class="row mb-2">
                     <div class="col-12 d-flex justify-content-center justify-content-md-end">
-                        <button type="button" class="btn btn-outline-secondary action-btn">CHECKOUT</button>
+                        <button type="button" [routerLink]="['/checkout']"
+                        class="btn btn-outline-secondary action-btn black-btn">CHECKOUT</button>
                     </div>
                 </div>
             </div>

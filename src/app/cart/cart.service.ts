@@ -20,4 +20,17 @@ export class CartService {
       })
     );
   };
+
+  public removeItem = (productId, size) => {
+    const payload = {
+      params: {productId, size}
+    };
+
+    return this.httpClient.delete(this.baseUrl, payload).pipe(
+      tap(cart => {
+        console.log('cart', cart);
+        this.store.dispatch(new CartAction(cart));
+      })
+    )
+  }
 }
