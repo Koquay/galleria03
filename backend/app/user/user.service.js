@@ -12,6 +12,8 @@ exports.login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
+    // throw new Error('affdsdsf');
+
     if (!isLength(password, { min: 6 })) {
       return res.status(422).send("Password must be minumum 6 characters");
     } else if (!isEmail(email)) {
@@ -36,8 +38,8 @@ exports.login = async (req, res) => {
       console.log("token", token);
 
       const cart = await Cart.findOne({ user: user._id }).populate({
-        path: 'products.product',
-        model: 'Product'
+        path: "products.product",
+        model: "Product",
       });
       console.log("cart", cart);
 
@@ -46,6 +48,7 @@ exports.login = async (req, res) => {
       res.status(401).send("Invalid login information");
     }
   } catch (error) {
-    throw error;
+    console.log(error);
+    res.status(500).send("Error logging in user!");
   }
 };

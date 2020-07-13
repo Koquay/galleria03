@@ -3,6 +3,7 @@ require("./product.model");
 const Product = require("mongoose").model("Product");
 
 exports.getProducts = async (res, filters) => {
+  
   console.log(chalk.blue("PRODUCT SERVICE"));
 
   console.log(chalk.cyan("filters", filters));
@@ -12,10 +13,11 @@ exports.getProducts = async (res, filters) => {
 
   try {
     const products = await Product.aggregate(aggregatePipeline);
-    // console.log("products", products);
-    res.status(200).json(products);
+    console.log("products", products);
+    res.status(200).json(products);    
   } catch (error) {
-    throw error;
+    console.log(error)
+    res.status(500).send('Error getting prouducts');        
   }
 };
 

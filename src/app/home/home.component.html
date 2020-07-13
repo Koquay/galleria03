@@ -65,216 +65,188 @@
                                 <div class="col-12 col-md-4 col-lg product" *ngFor="let item of featuredItems.recent">
                                     <div class="card">
                                         <img class="card-img-top w-100 d-block img-1" src="assets/img/{{item.image[0]}}">
-                                        <img class="card-img w-100 d-block img-2" src="assets/img/{{item.image[1]}}" style="opacity: 1;">
-                                        <div class="card-body text-center">
-                                            <span class="d-block">{{item.designer}}</span>
-                                            <span class="d-block">
-                                                <span class="mr-2 strike-through">{{item.listPrice | currency:'USD':'symbol-narrow'}}</span>
-                                                <span class="font-weight-bold">{{item.price | currency:'USD':'symbol-narrow'}}</span>
-                                            </span>
-                                            <span>
-                                                <ngb-rating [(rate)]="item.rating" [max]="5">
-                                                    <ng-template let-fill="fill" let-index="index">
-                                                        <span class="star2" [class.filled]="fill === 100">&#9733;</span>
-                                                    </ng-template>
-                                                </ngb-rating>
-                                            </span>
+                                            <img class="card-img w-100 d-block img-2" src="assets/img/{{item.image[1]}}" style="opacity: 1;">
+                                                <div class="card-body text-center">
+                                                    <span class="d-block">{{item.designer}}</span>
+                                                    <span class="d-block">
+                                                        <span class="mr-2 strike-through">{{item.listPrice | currency:'USD':'symbol-narrow'}}</span>
+                                                        <span class="font-weight-bold">{{item.price | currency:'USD':'symbol-narrow'}}</span>
+                                                    </span>
+                                                    <span>
+                                                        <ngb-rating [(rate)]="item.rating" [max]="5">
+                                                            <ng-template let-fill="fill" let-index="index">
+                                                                <span class="star2" [class.filled]="fill === 100">&#9733;</span>
+                                                            </ng-template>
+                                                        </ngb-rating>
+                                                    </span>
+                                                </div>
+                                                <div class="product-actions">
+                                                    <i class="fa fa-search"></i>
+                                                    <i class="fa fa-heart"></i>
+                                                    <i class="fa fa-exchange"></i>
+                                                </div>
+                                                <div class="add-to-cart">
+                                                    <span>Add to Cart</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="product-actions">
-                                            <i class="fa fa-search"></i>
-                                            <i class="fa fa-heart"></i>
-                                            <i class="fa fa-exchange"></i>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade  show active" role="tabpanel" id="tab-2">
+                                    <div class="row d-flex justify-content-between mt-4">
+                                        <div class="col-12 col-md-4 col-lg product" *ngFor="let item of featuredItems.featured">
+                                            <div class="card">
+                                                <img class="card-img-top w-100 d-block img-1" src="assets/img/{{item.image[0]}}">
+                                                    <img class="card-img w-100 d-block img-2" src="assets/img/{{item.image[1]}}" style="opacity: 1;">
+                                                        <div class="card-body text-center">
+                                                            <span class="d-block">{{item.designer}}</span>
+                                                            <span class="d-block">
+                                                                <span class="mr-2 strike-through">{{item.listPrice | currency:'USD':'symbol-narrow'}}</span>
+                                                                <span class="font-weight-bold">{{item.price | currency:'USD':'symbol-narrow'}}</span>
+                                                            </span>
+                                                            <span>
+                                                                <ngb-rating [(rate)]="item.rating" [max]="5">
+                                                                    <ng-template let-fill="fill" let-index="index">
+                                                                        <span class="star2" [class.filled]="fill === 100">&#9733;</span>
+                                                                    </ng-template>
+                                                                </ngb-rating>
+                                                            </span>
+                                                        </div>
+                                                        <div class="product-actions">
+                                                            <i class="fa fa-search"></i>
+                                                            <i class="fa fa-heart"></i>
+                                                            <i class="fa fa-exchange"></i>
+                                                        </div>
+                                                        <div class="add-to-cart">
+                                                            <span>Add to Cart</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="add-to-cart">
-                                            <span>Add to Cart</span>
+
+                                        <div class="tab-pane fade" role="tabpanel" id="tab-3">
+                                            <p>Content for tab 3.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade  show active" role="tabpanel" id="tab-2">
-                            <div class="row d-flex justify-content-between mt-4">
-                                <div class="col-12 col-md-4 col-lg product" *ngFor="let item of featuredItems.featured">
-                                    <div class="card">
-                                        <img class="card-img-top w-100 d-block img-1" src="assets/img/{{item.image[0]}}">
-                                        <img class="card-img w-100 d-block img-2" src="assets/img/{{item.image[1]}}" style="opacity: 1;">
-                                        <div class="card-body text-center">
-                                            <span class="d-block">{{item.designer}}</span>
-                                            <span class="d-block">
-                                                <span class="mr-2 strike-through">{{item.listPrice | currency:'USD':'symbol-narrow'}}</span>
-                                                <span class="font-weight-bold">{{item.price | currency:'USD':'symbol-narrow'}}</span>
-                                            </span>
-                                            <span>
-                                                <ngb-rating [(rate)]="item.rating" [max]="5">
-                                                    <ng-template let-fill="fill" let-index="index">
-                                                        <span class="star2" [class.filled]="fill === 100">&#9733;</span>
-                                                    </ng-template>
-                                                </ngb-rating>
-                                            </span>
+                    </section>
+                    <section id="sale">
+                        <div class="row">
+                            <div class="col-12 col-md-8 ad mb-4 mb-md-0">
+                                <img class="img-fluid" src="assets/img/{{sales[0].image}}">
+                                    <div class="text-center sale-banner">
+                                        <h2 class="font-weight-bold mb-0">
+                                            <span class="d-block">{{sales[0].text1}}</span>
+                                            <span class="d-block">{{sales[0].text2}}</span>
+                                        </h2>
+                                    </div>
+                                    <div class="overlay"></div>
+                                    <i class="fa fa-search"></i>
+                                </div>
+                                <div class="col-12 col-md-4 ad">
+                                    <img class="img-fluid" src="assets/img/{{sales[1].image}}">
+                                        <div class="text-center sale-banner sale-banner-2">
+                                            <h2 class="font-weight-bold mb-0">
+                                                <span class="d-block">{{sales[1].text1}}</span>
+                                                <span class="d-block">{{sales[1].text2}}</span>
+                                                <!-- <span class="d-block">35% OFF</span> -->
+                                            </h2>
                                         </div>
-                                        <div class="product-actions">
-                                            <i class="fa fa-search"></i>
-                                            <i class="fa fa-heart"></i>
-                                            <i class="fa fa-exchange"></i>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <span>Add to Cart</span>
-                                        </div>
+                                        <div class="overlay"></div>
+                                        <i class="fa fa-search"></i>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </section>
+                            <section id="blog-brand">
+                                <div class="row d-lg-flex">
+                                    <div class="col-12 col-md-6">
+                                        <h5 class="text-center">FROM BLOG</h5>
+                                        <div class="row mt-4">
+                                            <div class="col-12 col-lg-6 blog" *ngFor="let blog of blog.featuredBlogs">
+                                                <div class="card border-0">
+                                                    <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{blog.image}}">
+                                                        <div class="card-body p-0">
+                                                            <h4 class="card-title mb-0 mt-1">
+                                                                <a href="">{{blog.title}}</a>
+                                                                <br></h4>
+                                                                <p class="card-text mb-0">{{blog.excerpt}}<br></p>
+                                                                    <div class="d-flex justify-content-between align-items-center align-items-lg-center links">
+                                                                        <a href="#">
+                                                                            <i class="fa fa-edit mr-1"></i>
+                                                                            <span>{{blog.author}}</span>
+                                                                        </a>
+                                                                        <a href="#">
+                                                                            <i class="fa fa-calendar mr-1"></i>
+                                                                            <span>{{blog.numberOfDaysAgo}}
+                                                                                days ago</span>
+                                                                        </a>
+                                                                        <a href="#">
+                                                                            <i class="fa fa-comments mr-1"></i>
+                                                                            <span>{{blog.numberOfComments}}
+                                                                                comments</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex d-lg-flex align-items-center date text-center">
+                                                                    <h3>
+                                                                        <span>{{blog.day}}</span>
+                                                                        <span class="d-block month">{{blog.month}}</span>
+                                                                    </h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                        <div class="tab-pane fade" role="tabpanel" id="tab-3">
-                            <p>Content for tab 3.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="sale">
-        <div class="row">
-            <div class="col-12 col-md-8 ad mb-4 mb-md-0">
-                <img class="img-fluid" src="assets/img/{{sales[0].image}}">
-                <div class="text-center sale-banner">
-                    <h2 class="font-weight-bold mb-0">
-                        <span class="d-block">{{sales[0].text1}}</span>
-                        <span class="d-block">{{sales[0].text2}}</span>
-                    </h2>
-                </div>
-                <div class="overlay"></div>
-                <i class="fa fa-search"></i>
-            </div>
-            <div class="col-12 col-md-4 ad">
-                <img class="img-fluid" src="assets/img/{{sales[1].image}}">
-                <div class="text-center sale-banner sale-banner-2">
-                    <h2 class="font-weight-bold mb-0">
-                        <span class="d-block">{{sales[1].text1}}</span>
-                        <span class="d-block">{{sales[1].text2}}</span>
-                        <!-- <span class="d-block">35% OFF</span> -->
-                    </h2>
-                </div>
-                <div class="overlay"></div>
-                <i class="fa fa-search"></i>
-            </div>
-        </div>
-    </section>
-    <section id="blog-brand">
-        <div class="row d-lg-flex">
-            <div class="col-12 col-md-6">
-                <h5 class="text-center">FROM BLOG</h5>
-                <div class="row mt-4">
-                    <div class="col-12 col-lg-6 blog" *ngFor="let blog of blog.featuredBlogs">
-                        <div class="card border-0">
-                            <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{blog.image}}">
-                            <div class="card-body p-0">
-                                <h4 class="card-title mb-0 mt-1">
-                                    <a href="">{{blog.title}}</a><br></h4>
-                                <p class="card-text mb-0">{{blog.excerpt}}<br></p>
-                                <div class="d-flex justify-content-between align-items-center align-items-lg-center links">
-                                    <a href="#">
-                                        <i class="fa fa-edit mr-1"></i>
-                                        <span>{{blog.author}}</span>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-calendar mr-1"></i>
-                                        <span>{{blog.numberOfDaysAgo}}
-                                            days ago</span>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-comments mr-1"></i>
-                                        <span>{{blog.numberOfComments}}
-                                            comments</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="d-flex d-lg-flex align-items-center date text-center">
-                                <h3>
-                                    <span>{{blog.day}}</span>
-                                    <span class="d-block month">{{blog.month}}</span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <h5 class="text-center">OUR BRAND</h5>
+                                                    <div class="row d-flex justify-content-center mt-4">
+                                                        <div class="col-3 d-flex justify-content-center align-items-center company py-1 px-0" *ngFor="let brand of brands">
+                                                            <img class="img-fluid" src="assets/img/{{brand.image}}"></div>
 
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <h5 class="text-center">OUR BRAND</h5>
-                <div class="row d-flex justify-content-center mt-4">
-                    <div class="col-3 d-flex justify-content-center align-items-center company py-1 px-0" *ngFor="let brand of brands">
-                        <img class="img-fluid" src="assets/img/{{brand.image}}">
-                    </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section id="services">
+                                                <div class="row">
+                                                    <div class="col-12 text-center flex-column justify-content-center col-md-4 col-lg" *ngFor="let service of services">
+                                                        <img class="img-fluid mb-2" src="assets/img/{{service.image}}">
+                                                            <h6 class="font-weight-bold">{{service.title}}</h6>
+                                                            <p>{{service.description}}</p>
+                                                        </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="services">
-        <div class="row">
-            <div class="col-12 text-center flex-column justify-content-center col-md-4 col-lg" *ngFor="let service of services">
-                <img class="img-fluid mb-2" src="assets/img/{{service.image}}">
-                <h6 class="font-weight-bold">{{service.title}}</h6>
-                <p>{{service.description}}</p>
-            </div>
-
-        </div>
-    </section>
-</div>
-<hr/>
-<div class="container mt-5" id="subscription">
-    <div class="row">
-        <div class="col-12 col-md-4">
-            <h5 class="text-center mb-4">{{us.aboutUs.title}}</h5>
-            <p>
-                {{us.aboutUs.text}}<br/>
-            </p>
-        </div>
-        <div class="col-12 col-md-4">
-            <h5 class="text-center mb-4">{{us.followUs.title}}</h5>
-            <div class="d-flex justify-content-between">
-                <i class={{icon}} *ngFor="let icon of us.followUs.socialIcons"></i>
-            </div>
-        </div>
-        <div class="col-12 col-md-4">
-            <h5 class="text-center">{{us.newsLetter.title}}</h5>
-            <div class="input-group mt-4">
-                <div class="input-group-prepend"></div>
-                <input class="form-control" type="text"/>
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">{{us.newsLetter.buttonText}}</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<hr/>
-<div class="container my-5" id="info">
-    <div class="row">
-        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
-            <img src="assets/img/{{footerLinks.facilities.image}}"/>
-            <div id="offices" class="mt-3" *ngFor="let office of footerLinks.facilities.offices">
-                <h5>{{office.title}}</h5>
-                <p class="mb-1">{{office.address}}</p>
-                <p class="mb-1">{{office.phone}}</p>
-                <p class="mb-1">{{office.email}}</p>
-                <p class="mb-1">{{office.website}}</p>
-            </div>
-
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0" *ngFor="let sectionLink of footerLinks.links">
-            <h5>
-                <strong>{{sectionLink.title}}</strong>
-            </h5>
-            <ul class="list-unstyled">
-                <li *ngFor="let link of sectionLink.link">{{link.label}}</li>
-            </ul>
-        </div>
-
-        <div class="col-12">
-            <img class="img-fluid mt-5" src="assets/img/payment.png"/>
-        </div>
-    </div>
-</div>
-<hr/>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <hr/>
+                                            <div class="container mt-5" id="subscription">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-4">
+                                                        <h5 class="text-center mb-4">{{us.aboutUs.title}}</h5>
+                                                        <p>
+                                                            {{us.aboutUs.text}}<br/>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-12 col-md-4">
+                                                        <h5 class="text-center mb-4">{{us.followUs.title}}</h5>
+                                                        <div class="d-flex justify-content-between">
+                                                            <i class={{icon}} *ngFor="let icon of us.followUs.socialIcons"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-4">
+                                                        <h5 class="text-center">{{us.newsLetter.title}}</h5>
+                                                        <div class="input-group mt-4">
+                                                            <div class="input-group-prepend"></div>
+                                                            <input class="form-control" type="text"/>
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-primary" type="button">{{us.newsLetter.buttonText}}</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <app-footer></app-footer>

@@ -1,18 +1,24 @@
 import { Action } from "@ngrx/store";
 
 export enum LoginActionTypes {
-  LOGGED_IN = "LOGGED_IN",
-  LOGGED_OUT = "LOGGED_OUT",
+  LOG_IN = "LOG_IN",
+  LOG_OUT = "LOG_OUT",
+  IS_LOGGED_IN = "IS_LOGGED_IN",
 }
 
 export class LoginAction implements Action {
-  readonly type = LoginActionTypes.LOGGED_IN;
+  readonly type = LoginActionTypes.LOG_IN;
   constructor() {}
 }
 
 export class LogoutAction implements Action {
-  readonly type = LoginActionTypes.LOGGED_OUT;
+  readonly type = LoginActionTypes.LOG_OUT;
   constructor() {}
 }
 
-export type LoginActionUnion = LoginAction;
+export class IsLoggedInAction implements Action {
+  readonly type = LoginActionTypes.IS_LOGGED_IN;
+  constructor() {}
+}
+
+export type LoginActionUnion = LoginAction | LogoutAction | IsLoggedInAction;

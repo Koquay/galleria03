@@ -1,0 +1,52 @@
+$primary: #ef5656;
+$charcoal: #6e6e6e;
+$light-charcoal: #d2d2d2;
+
+#subscription {
+    h5 {
+      background-color: $primary;
+      color: white;
+      border: solid $primary;
+      width: 55%;
+      padding: 0.5rem 1rem;
+  
+      @media (min-width: 768px) {
+        width: 75%;
+      }
+  
+      @media (min-width: 991px) {
+        width: 55%;
+      }
+    }
+  
+    i {
+      padding: 0.5rem 0.8rem;
+      border: 1px solid;
+    }
+  
+    .input-group {
+      button {
+        background: $primary;
+        border: $primary;
+      }
+    }
+  }
+  
+  #info {
+    h5 {
+      font-weight: bold;
+    }
+    #offices {
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  
+    li {
+      border-bottom: 1px solid;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border-color: $light-charcoal;
+    }
+  }
+  

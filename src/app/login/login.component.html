@@ -3,24 +3,16 @@
 <div class="container">
   <app-section-header></app-section-header>
 
+  <app-message></app-message>
+
   <form class="mt-4 px-10" #loginform="ngForm">
     <div class="row">
       <div class="col">
         <h4 class="page-title" style="width: 16rem;">Log Into Your Account</h4>
       </div>
     </div>
-    <!-- <div class="form-row mt-4">
-            <div class="col-12">
-                <label>Name</label>
-                <input class="form-control" type="text" name='name' required name="name" [(ngModel)]="payload.name" #name="ngModel">
-                <div *ngIf="name.invalid && (name.dirty || name.touched)">
-                    <div *ngIf="name.errors.required" class="c-red">
-                        Name is required
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    <div class="form-row mt-4">
+
+    <div class="form-row my-4">
       <div class="col-12">
         <label>Email</label>
         <input
@@ -72,3 +64,5 @@
     </div>
   </form>
 </div>
+
+<app-footer></app-footer>

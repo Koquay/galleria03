@@ -11,6 +11,8 @@ import CollectionReducer from "src/app/collection/collection.reducer";
 import { ProductReducer } from "src/app/product/product.reducer";
 import { LoginReducer } from "src/app/login/login.reducer";
 import { CartReducer } from "src/app/cart/cart.reducer";
+import { CheckoutReducer } from 'src/app/checkout/checkout.reducer';
+import { MessageReducer } from 'src/app/shared/message/message/message.reducer';
 
 export interface State {}
 
@@ -21,4 +23,6 @@ export const reducers: ActionReducerMap<State> = {
   product: ProductReducer,
   login: LoginReducer,
   cart: CartReducer,
+  checkout:CheckoutReducer,
+  message:MessageReducer
 };

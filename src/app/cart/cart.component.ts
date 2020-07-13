@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { CartService } from './cart.service';
+import { CartService } from "./cart.service";
 
 @Component({
   selector: "app-cart",
@@ -10,7 +10,7 @@ import { CartService } from './cart.service';
 export class CartComponent implements OnInit {
   private cart;
 
-  constructor(private store: Store<any>, private cartService:CartService) {}
+  constructor(private store: Store<any>, private cartService: CartService) {}
 
   ngOnInit() {
     this.getCart();
@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
 
     this.cartService.removeItem(productId, size).subscribe(() => {
       this.getCart();
-    })    
+    });
   };
 
   private getSubtotal = () => {
@@ -55,6 +55,7 @@ export class CartComponent implements OnInit {
   };
 
   private clearCart = () => {
-    console.log('clearing cart')
-  }
+    console.log("clearing cart");
+    this.cartService.clearCart().subscribe();
+  };
 }

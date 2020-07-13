@@ -6,6 +6,10 @@ import {
   AddProductAction,
   AddMinMaxPricesAction,
 } from "../product/product.action";
+import {
+  ClearMessageAction,
+  AddErrorAction,
+} from "../shared/message/message/message.action";
 
 @Injectable({
   providedIn: "root",
@@ -15,25 +19,32 @@ export class CollectionService {
 
   constructor(private httpClient: HttpClient, private store: Store<any>) {}
 
-  public getCollection = (filters) => {
-    return this.httpClient.get(this.url).pipe(
-      tap((products) => {
-        console.log("products", products);
-        this.store.dispatch(new AddProductAction(products));
-        this.store.dispatch(new AddMinMaxPricesAction(products));
-      })
-    );
-  };
+  // public getCollection = (filters) => {
+  //   return this.httpClient.get(this.url).pipe(
+  //     tap((products) => {
+  //       console.log("products", products);
+  //       this.store.dispatch(new AddProductAction(products));
+  //       this.store.dispatch(new AddMinMaxPricesAction(products));
+  //     })
+  //   );
+  // };
 
   public filterProducts = (filters) => {
     const url = `/api/collection`;
     const queryParams = this.createQueryParams(filters);
+
+    this.store.dispatch(new ClearMessageAction());
 
     return this.httpClient.get(`${url}${queryParams}`).pipe(
       tap((products) => {
         console.log("products", products);
         this.store.dispatch(new AddProductAction(products));
         this.store.dispatch(new AddMinMaxPricesAction(products));
+      }),
+      catchError((error) => {
+        console.log("error", error);
+        this.store.dispatch(new AddErrorAction(error.error));
+        throw error;
       })
     );
   };

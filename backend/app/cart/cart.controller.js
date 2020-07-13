@@ -13,14 +13,21 @@ exports.addToCart = async (req, res) => {
 };
 
 exports.deleteItem = async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   console.log("req.params", req.params);
   console.log("req.query", req.query);
 
   try {
-    await cartService.deleteItem(req, res)
-  } catch(error) {
-    throw error
+    await cartService.deleteItem(req, res);
+  } catch (error) {
+    throw error;
   }
-  
-}
+};
+
+exports.clearCart = async (req, res) => {
+  try {
+    await cartService.clearCart(req, res);
+  } catch (error) {
+    throw error;
+  }
+};

@@ -6,17 +6,22 @@ export const LoginReducer = (
 ) => {
   console.log("ACTION TYPE", action.type);
   switch (action.type) {
-    case LoginActionTypes.LOGGED_IN:
+    case LoginActionTypes.LOG_IN:
       return {
         ...state,
-        loggedIn: true,
+        isLoggedIn: true,
       };
 
-    // case LoginActionTypes.LOGGED_OUT:
-    //   return {
-    //     ...state,
-    //     loggedIn: false,
-    //   };
+    case LoginActionTypes.IS_LOGGED_IN:
+      return {
+        ...state,
+      };
+
+    case LoginActionTypes.LOG_OUT:
+      return {
+        ...state,
+        isLoggedIn: false,
+      };
 
     default:
       return state;
@@ -24,5 +29,5 @@ export const LoginReducer = (
 };
 
 const initialState = {
-  loggedIn: false,
+  isLoggedIn: false,
 };

@@ -10,8 +10,10 @@
                     <span class="ml-4">
                         <i class="fa fa-cart-arrow-down mr-1"></i>Shopping Cart</span>
                 </a>
-                <span class="ml-4">
-                    <i class="fa fa-share-square-o mr-1"></i>Checkout</span>
+                <a [routerLink]="['/checkout']">
+                    <span class="ml-4">
+                        <i class="fa fa-share-square-o mr-1"></i>Checkout</span>
+                </a>
             </div>
             <div class="col-3 d-flex justify-content-lg-end">
                 <span>USD<i class="fa fa-angle-down ml-1"></i>
@@ -47,13 +49,19 @@
                 </span>
             </div>
             <div class="col-12 d-flex justify-content-center col-md-4 my-3 m-md-0" id="mid-col">
-                <img class="d-lg-flex justify-content-lg-center" src="assets/img/logo.png"></div>
+                <a [routerLink]="['/home']">
+                    <img class="d-lg-flex justify-content-lg-center" src="assets/img/logo.png"></a>
+                </div>
                 <div class="col-12 col-md-4">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-between">
-                            <a [routerLink]="['/login']">
+                            <a [routerLink]="['/login']" *ngIf="!isLoggedIn">
                                 <span>
                                     <i class="fa fa-share-square-o mr-1"></i>Login</span>
+                            </a>
+                            <a (click)="logout()" *ngIf="isLoggedIn">
+                                <span>
+                                    <i class="fa fa-share-square-o mr-1"></i>Logout</span>
                             </a>
                             <span>
                                 <i class="fa fa-lock mr-1"></i>Register</span>
@@ -87,7 +95,7 @@
                                 <div class="collapse navbar-collapse d-lg-flex justify-content-lg-center" id="navcol-1">
                                     <ul class="nav navbar-nav d-lg-flex px-2 mb-2">
                                         <li class="nav-item" role="presentation">
-                                            <a class="nav-link active" href="#">HOME</a>
+                                            <a [routerLink]="['/home']" class="nav-link active">HOME</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link" href="#">ABOUT</a>

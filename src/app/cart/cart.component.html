@@ -2,6 +2,8 @@
 <div class="container">
     <app-section-header></app-section-header>
 
+    <app-message></app-message>
+
     <div class="section d-none d-md-block mt-5">
         <div class="row d-flex">
             <div class="col">PRODUCT</div>
@@ -9,7 +11,7 @@
             <div class="col-md-2 text-md-right">PRICE</div>
             <div class="col-md-2 text-md-center">QUANTITY</div>
             <div class="col-md-2 text-md-right">TOTAL</div>
-            
+
         </div>
     </div>
     <div class="section mt-4 cart-table" *ngFor="let item of cart.products">
@@ -53,12 +55,10 @@
             <div class="col-12 col-md-6">
                 <div class="row">
                     <div class="col-12 col-md-6 mb-2 mb-md-0 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-secondary action-btn">CONTINUE SHOPPING</button>
+                        <button type="button" class="btn btn-outline-secondary action-btn" [routerLink]="['/home']">CONTINUE SHOPPING</button>
                     </div>
                     <div class="col-12 col-md-6 d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-secondary action-btn"
-                            (click)="clearCart()"
-                        >CLEAR CART</button>
+                        <button type="button" class="btn btn-outline-secondary action-btn" (click)="clearCart()">CLEAR CART</button>
                     </div>
                 </div>
             </div>
@@ -89,8 +89,7 @@
                 </div>
                 <div class="row mb-2">
                     <div class="col-12 d-flex justify-content-center justify-content-md-end">
-                        <button type="button" [routerLink]="['/checkout']"
-                        class="btn btn-outline-secondary action-btn black-btn">CHECKOUT</button>
+                        <button type="button" [routerLink]="['/checkout']" class="btn btn-outline-secondary action-btn black-btn">CHECKOUT</button>
                     </div>
                 </div>
             </div>
@@ -98,3 +97,5 @@
     </div>
 
 </div>
+
+<app-footer></app-footer>
