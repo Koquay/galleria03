@@ -22,8 +22,6 @@ exports.login = async (req, res) => {
 
     const user = await User.findOne({ email }).select("+password");
 
-    console.log("user", user);
-
     if (!user) {
       return res.status(404).send("User does not exist");
     }
@@ -35,20 +33,16 @@ exports.login = async (req, res) => {
         expiresIn: "1h",
       });
 
-      console.log("token", token);
-
       const cart = await Cart.findOne({ user: user._id }).populate({
         path: "products.product",
         model: "Product",
       });
-      console.log("cart", cart);
 
       res.status(200).json({ token, cart });
     } else {
       res.status(401).send("Invalid login information");
     }
   } catch (error) {
-    console.log(error);
     res.status(500).send("Error logging in user!");
   }
 };

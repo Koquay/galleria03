@@ -19,16 +19,6 @@ export class CollectionService {
 
   constructor(private httpClient: HttpClient, private store: Store<any>) {}
 
-  // public getCollection = (filters) => {
-  //   return this.httpClient.get(this.url).pipe(
-  //     tap((products) => {
-  //       console.log("products", products);
-  //       this.store.dispatch(new AddProductAction(products));
-  //       this.store.dispatch(new AddMinMaxPricesAction(products));
-  //     })
-  //   );
-  // };
-
   public filterProducts = (filters) => {
     const url = `/api/collection`;
     const queryParams = this.createQueryParams(filters);
@@ -37,12 +27,10 @@ export class CollectionService {
 
     return this.httpClient.get(`${url}${queryParams}`).pipe(
       tap((products) => {
-        console.log("products", products);
         this.store.dispatch(new AddProductAction(products));
         this.store.dispatch(new AddMinMaxPricesAction(products));
       }),
       catchError((error) => {
-        console.log("error", error);
         this.store.dispatch(new AddErrorAction(error.error));
         throw error;
       })
@@ -63,16 +51,11 @@ export class CollectionService {
       }
     }
 
-    console.log("tmpCategoryFilters", tmpCategoryFilters);
-
     // tmpCategoryFilters = tmpCategoryFilters.flat();
 
     for (let filter of tmpCategoryFilters) {
       categoryFilters.push(filter.name);
     }
-
-    console.log("filterPrice", filterPrice);
-    console.log("categoryFilters", categoryFilters);
 
     const dataFilters = JSON.stringify({
       categoryFilters: categoryFilters,
@@ -80,7 +63,7 @@ export class CollectionService {
     });
 
     const queryParams = `?filters=${dataFilters}`;
-    console.log("queryParams", queryParams);
+
     return queryParams;
   };
 }

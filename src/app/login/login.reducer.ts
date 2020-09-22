@@ -4,7 +4,6 @@ export const LoginReducer = (
   state = initialState,
   action: LoginActionUnion
 ) => {
-  console.log("ACTION TYPE", action.type);
   switch (action.type) {
     case LoginActionTypes.LOG_IN:
       return {

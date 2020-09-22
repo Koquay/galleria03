@@ -3,21 +3,14 @@ require("./product.model");
 const Product = require("mongoose").model("Product");
 
 exports.getProducts = async (res, filters) => {
-  
-  console.log(chalk.blue("PRODUCT SERVICE"));
-
-  console.log(chalk.cyan("filters", filters));
-
   const aggregatePipeline = buildAggregatePipeline(filters);
-  console.log("aggregatePipeline", JSON.stringify(aggregatePipeline));
 
   try {
     const products = await Product.aggregate(aggregatePipeline);
-    console.log("products", products);
-    res.status(200).json(products);    
+
+    res.status(200).json(products);
   } catch (error) {
-    console.log(error)
-    res.status(500).send('Error getting prouducts');        
+    res.status(500).send("Error getting prouducts");
   }
 };
 
@@ -42,8 +35,6 @@ const buildAggregatePipeline = (filtersStr) => {
 };
 
 const buildPriceRangeMatch = (filterPrice) => {
-  console.log("filterPrice", filterPrice);
-
   if (filterPrice && filterPrice.maxPrice && filterPrice.minPrice) {
     let priceMatch = [];
 
@@ -53,8 +44,6 @@ const buildPriceRangeMatch = (filterPrice) => {
         { $lte: ["$price", +filterPrice.maxPrice] },
       ],
     });
-
-    console.log("priceMatch", priceMatch);
 
     return { $match: { $expr: { $or: priceMatch } } };
   }

@@ -13,10 +13,8 @@ export const CollectionReducer = (
       return state;
 
     case CollectionActionTypes.SET_ITEM_CHECKED:
-      console.log("action", action.category, action.item);
       const changedItem = setItemChecked(state, action.category, action.item);
-      console.log("changed Item", changedItem);
-      console.log("state", state);
+
       return state;
 
     default:
@@ -26,15 +24,14 @@ export const CollectionReducer = (
 
 const setItemChecked = (state, inCategory, inItem) => {
   const { category } = state.categories;
-  console.log("category", category);
+
   const targetCategory = category.find((cat) => cat.name === inCategory);
-  console.log("targetCategory", targetCategory);
+
   const targetItem = targetCategory.items.find(
     (item) => item.name === inItem.name
   );
-  console.log("targetItem", targetItem);
+
   // targetItem.checked = !targetItem.checked;
-  console.log("targetCategory", targetCategory);
 
   return {
     ...targetItem,

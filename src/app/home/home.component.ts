@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
       this.brands = homeStaticData.homeStaticData.brands;
       this.sales = homeStaticData.homeStaticData.sales;
       this.services = homeStaticData.homeStaticData.services;
-      console.log("this.services", this.services);
     });
   };
 
@@ -49,12 +48,9 @@ export class HomeComponent implements OnInit {
     let footer$ = this.store.select(footerSelector);
 
     footer$.subscribe((footerStaticData) => {
-      console.log("footerStaticData", footerStaticData);
-
       this.us = footerStaticData.us;
-      console.log("this.us", this.us);
+
       this.footerLinks = footerStaticData.footerLinks;
-      console.log("this.footerLinks", this.footerLinks);
     });
   };
 }

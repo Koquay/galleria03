@@ -2,85 +2,6 @@ $primary: #ef5656;
 $charcoal: #6e6e6e;
 $light-charcoal: #d2d2d2;
 
-body {
-  font-family: "Roboto";
-
-  a {
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  color: $charcoal;
-}
-
-header {
-  color: $charcoal;
-
-  i {
-    color: $primary;
-  }
-
-  #header-top-row {
-    border-bottom: 1px solid $light-charcoal;
-  }
-
-  #currency {
-    background: rgba(49, 49, 49, 0.97);
-    color: white;
-    margin-right: 3rem;
-  }
-
-  .fa-phone {
-    font-size: 2rem;
-  }
-
-  #header-middle-row {
-    border-bottom: 1px solid $light-charcoal;
-
-    .badge {
-      background: $primary;
-      border-radius: 50%;
-      margin-top: -2rem;
-      margin-left: 0.8rem;
-    }
-
-    .input-group {
-      button {
-        background: $primary;
-
-        i {
-          color: white;
-        }
-      }
-    }
-  }
-
-  .navbar {
-    background: $primary;
-
-    .nav {
-      background: white;
-    }
-
-    button {
-      i {
-        color: white !important;
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (min-width: 992px) {
-      background: white;
-    }
-  }
-
-  .user {
-    a {
-      color: $charcoal;
-    }
-  }
-}
-
 #carousel-1 {
   .carousel-item {
     position: relative;
@@ -114,6 +35,7 @@ header {
 
 #mid-container {
   #collections {
+    margin-top: 5rem;
     .collection {
       position: relative;
       overflow: hidden;
@@ -175,7 +97,7 @@ header {
   }
 
   #product-carousel {
-    margin-top: 4rem;
+    margin-top: 6rem;
 
     ul {
       li {
@@ -277,7 +199,7 @@ header {
 }
 
 #sale {
-  margin-top: 4rem;
+  margin-top: 6rem;
 
   .ad {
     position: relative;
@@ -338,7 +260,7 @@ header {
 }
 
 #blog-brand {
-  margin-top: 4rem;
+  margin-top: 6rem;
 
   h5 {
     background-color: $primary;
@@ -412,7 +334,7 @@ header {
 }
 
 #services {
-  margin-top: 4rem;
+  margin-top: 6rem;
 
   span {
     width: 15rem;

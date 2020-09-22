@@ -1,180 +1,298 @@
 <app-header></app-header>
 
 <div class="container">
-    <app-section-header></app-section-header>
+  <app-section-header></app-section-header>
 
-    <app-message></app-message>
+  <app-message></app-message>
 
-    <form #checkoutForm="ngForm" class="mt-4">
-        <div class="section">
-            <h5 class="section-header">DELIVERY</h5>
-            <div class="form-row my-3">
-                <div class="col-12 col-md-6">
-                    <label>First Name</label>
-                    <input class="form-control" type="text" required="required" name="firstName" [(ngModel)]="checkoutData.firstName" #firstName="ngModel">
-                        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                            <div *ngIf="firstName.errors.required" class="c-red">
-                                First name is required
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <label>Last Name</label>
-                        <input class="form-control" type="text" required="required" name="lastName" [(ngModel)]="checkoutData.lastName" #lastName="ngModel">
-                            <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
-                                <div *ngIf="lastName.errors.required" class="c-red">
-                                    Last name is required
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row my-3">
-                        <div class="col-12 col-md-6">
-                            <label>Email</label>
-                            <input class="form-control" type="text" required="required" name="email" [(ngModel)]="checkoutData.email" #email="ngModel">
-                                <div *ngIf="email.invalid && (email.dirty || email.touched)">
-                                    <div *ngIf="email.errors.required" class="c-red">
-                                        Email is required
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label>Phone</label>
-                                <input class="form-control" type="text" required="required" name="phone" [(ngModel)]="checkoutData.phone" #phone="ngModel">
-                                    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
-                                        <div *ngIf="phone.errors.required" class="c-red">
-                                            Phone is required
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row my-3">
-                                <div class="col-12 col-md-6">
-                                    <label>Shipping Address</label>
-                                    <input class="form-control" type="text" required="required" name="shippingAddress" [(ngModel)]="checkoutData.shippingAddress" #shippingAddress="ngModel">
-                                        <div *ngIf="shippingAddress.invalid && (shippingAddress.dirty || shippingAddress.touched)">
-                                            <div *ngIf="shippingAddress.errors.required" class="c-red">
-                                                Shipping Address is required
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <label>City, State</label>
-                                        <select class="form-control" required="required" name="cityState" [(ngModel)]="checkoutData.cityState" #cityState="ngModel">
-                                            <option></option>
-                                            <option *ngFor="let cityState of checkoutStatic.citiesStates">
-                                                {{cityState.text}}
-                                            </option>
-                                        </select>
-                                        <div *ngIf="cityState.invalid && (cityState.dirty || cityState.touched)">
-                                            <div *ngIf="cityState.errors.required" class="c-red">
-                                                City, State is required
-                                            </div>
-                                        </div>
-                                    </div>
+  <form #checkoutForm="ngForm" class="mt-5">
+    <div class="section">
+      <h5 class="section-header">DELIVERY</h5>
+      <div class="form-row my-4">
+        <div class="col-12 col-md-6">
+          <label class="font-weight-bold">First Name</label>
+          <input
+            class="form-control"
+            type="text"
+            required="required"
+            name="firstName"
+            [(ngModel)]="checkoutData.firstName"
+            #firstName="ngModel"
+          />
+          <div
+            *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+          >
+            <div *ngIf="firstName.errors.required" class="c-red">
+              First name is required
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="font-weight-bold">Last Name</label>
+          <input
+            class="form-control"
+            type="text"
+            required="required"
+            name="lastName"
+            [(ngModel)]="checkoutData.lastName"
+            #lastName="ngModel"
+          />
+          <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+            <div *ngIf="lastName.errors.required" class="c-red">
+              Last name is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row my-4">
+        <div class="col-12 col-md-6">
+          <label class="font-weight-bold">Email</label>
+          <input
+            class="form-control"
+            type="text"
+            required="required"
+            name="email"
+            [(ngModel)]="checkoutData.email"
+            #email="ngModel"
+          />
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors.required" class="c-red">
+              Email is required
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="font-weight-bold">Phone</label>
+          <input
+            class="form-control"
+            type="text"
+            required="required"
+            name="phone"
+            [(ngModel)]="checkoutData.phone"
+            #phone="ngModel"
+          />
+          <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+            <div *ngIf="phone.errors.required" class="c-red">
+              Phone is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row my-4">
+        <div class="col-12 col-md-6">
+          <label class="font-weight-bold">Shipping Address</label>
+          <input
+            class="form-control"
+            type="text"
+            required="required"
+            name="shippingAddress"
+            [(ngModel)]="checkoutData.shippingAddress"
+            #shippingAddress="ngModel"
+          />
+          <div
+            *ngIf="shippingAddress.invalid && (shippingAddress.dirty || shippingAddress.touched)"
+          >
+            <div *ngIf="shippingAddress.errors.required" class="c-red">
+              Shipping Address is required
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="font-weight-bold">City, State</label>
+          <select
+            class="form-control"
+            required="required"
+            name="cityState"
+            [(ngModel)]="checkoutData.cityState"
+            #cityState="ngModel"
+          >
+            <option></option>
+            <option *ngFor="let cityState of checkoutStatic.citiesStates">
+              {{cityState.text}}
+            </option>
+          </select>
+          <div
+            *ngIf="cityState.invalid && (cityState.dirty || cityState.touched)"
+          >
+            <div *ngIf="cityState.errors.required" class="c-red">
+              City, State is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row my-4">
+        <div class="col-12 col-md-6">
+          <label class="font-weight-bold">Zip Code</label>
+          <input
+            class="form-control"
+            type="text"
+            required="required"
+            name="zipCode"
+            [(ngModel)]="checkoutData.zipCode"
+            #zipCode="ngModel"
+          />
+          <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)">
+            <div *ngIf="zipCode.errors.required" class="c-red">
+              Zip Code is required
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="font-weight-bold">Delivery Date</label>
+          <input
+            class="form-control"
+            type="date"
+            required="required"
+            name="deliveryDate"
+            [(ngModel)]="checkoutData.deliveryDate"
+            #deliveryDate="ngModel"
+          />
+          <div
+            *ngIf="deliveryDate.invalid && (deliveryDate.dirty || deliveryDate.touched)"
+          >
+            <div *ngIf="deliveryDate.errors.required" class="c-red">
+              Delivery date is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row my-4">
+        <div class="col-12">
+          <label class="font-weight-bold">Special Instructions</label>
+          <textarea
+            class="form-control"
+            name="specialinstructions"
+            [(ngModel)]="checkoutData.specialinstructions"
+            #specialinstructions="ngModel"
+          ></textarea>
+        </div>
+      </div>
+    </div>
 
-                                </div>
-                                <div class="form-row my-3">
-                                    <div class="col-12 col-md-6">
-                                        <label>Zip Code</label>
-                                        <input class="form-control" type="text" required="required" name="zipCode" [(ngModel)]="checkoutData.zipCode" #zipCode="ngModel">
-                                            <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)">
-                                                <div *ngIf="zipCode.errors.required" class="c-red">
-                                                    Zip Code is required
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6">
-                                            <label>Delivery Date</label>
-                                            <input class="form-control" type="date" required="required" name="deliveryDate" [(ngModel)]="checkoutData.deliveryDate" #deliveryDate="ngModel">
-                                                <div *ngIf="deliveryDate.invalid && (deliveryDate.dirty || deliveryDate.touched)">
-                                                    <div *ngIf="deliveryDate.errors.required" class="c-red">
-                                                        Delivery date is required
-                                                    </div>
-                                                </div>
-                                            </div>
+    <div class="section mt-5">
+      <h5 class="section-header">PAYMENT</h5>
+      <div class="form-check my-3">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="formCheck-1"
+          name="paymentType"
+          [(ngModel)]="checkoutData.paymentType"
+          #paymentType="ngModel"
+          value="PayPal"
+        />
+        <label class="form-check-label" for="formCheck-1">PayPal</label>
+      </div>
+      <div class="form-check my-3">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="formCheck-2"
+          name="paymentType"
+          [(ngModel)]="checkoutData.paymentType"
+          #paymentType="ngModel"
+          value="Credit Card"
+        />
+        <label class="form-check-label" for="formCheck-2">Credit Card</label>
+      </div>
+    </div>
 
-                                        </div>
-                                        <div class="form-row my-3">
-                                            <div class="col-12">
-                                                <label>Special Instructions</label>
-                                                <textarea class="form-control" name="specialinstructions" [(ngModel)]="checkoutData.specialinstructions" #specialinstructions="ngModel"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
+    <div class="form-row my-4">
+      <div class="col-12">
+        <label class="font-weight-bold">Card Number</label>
+        <input
+          class="form-control"
+          type="text"
+          required="required"
+          name="cardNumber"
+          [(ngModel)]="checkoutData.cardNumber"
+          #cardNumber="ngModel"
+        />
+        <div
+          *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)"
+        >
+          <div *ngIf="cardNumber.errors.required" class="c-red">
+            Card Number is required
+          </div>
+        </div>
+      </div>
+    </div>
 
-                                    <div class="section mt-5">
-                                        <h5 class="section-header">PAYMENT</h5>
-                                        <div class="form-check my-3">
-                                            <input class="form-check-input" type="radio" id="formCheck-1" name="paymentType" [(ngModel)]="checkoutData.paymentType" #paymentType="ngModel" value="PayPal">
-                                                <label class="form-check-label" for="formCheck-1">PayPal</label>
-                                            </div>
-                                            <div class="form-check my-3">
-                                                <input class="form-check-input" type="radio" id="formCheck-2" name="paymentType" [(ngModel)]="checkoutData.paymentType" #paymentType="ngModel" value="Credit Card">
-                                                    <label class="form-check-label" for="formCheck-2">Credit Card</label>
-                                                </div>
-                                            </div>
+    <div class="form-row my-4">
+      <div class="col-12 col-md-4">
+        <label class="font-weight-bold">Exp. Month</label>
+        <select
+          class="form-control"
+          required="required"
+          name="expMonth"
+          [(ngModel)]="checkoutData.expMonth"
+          #expMonth="ngModel"
+        >
+          <option></option>
+          <option *ngFor="let expMonth of checkoutStatic.expMonths">
+            {{expMonth.text}}
+          </option>
+        </select>
+        <div *ngIf="expMonth.invalid && (expMonth.dirty || expMonth.touched)">
+          <div *ngIf="expMonth.errors.required" class="c-red">
+            Exp. Month is required
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <label class="font-weight-bold">Exp. Year</label>
+        <select
+          class="form-control"
+          required="required"
+          name="expYear"
+          [(ngModel)]="checkoutData.expYear"
+          #expYear="ngModel"
+        >
+          <option></option>
+          <option *ngFor="let expYear of checkoutStatic.expYears">
+            {{expYear.text}}
+          </option>
+        </select>
+        <div *ngIf="expYear.invalid && (expYear.dirty || expYear.touched)">
+          <div *ngIf="expYear.errors.required" class="c-red">
+            Exp. Year is required
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <label class="font-weight-bold">CW</label>
+        <input
+          class="form-control"
+          type="text"
+          required="required"
+          name="cw"
+          maxlength="3"
+          minlength="3"
+          [(ngModel)]="checkoutData.cw"
+          #cw="ngModel"
+        />
+        <div *ngIf="cw.invalid && (cw.dirty || cw.touched)">
+          <div *ngIf="cw.errors.required" class="c-red">
+            CW is required
+          </div>
+        </div>
+      </div>
+    </div>
 
-                                            <div class="form-row my-3">
-                                                <div class="col-12">
-                                                    <label>Card Number</label>
-                                                    <input class="form-control" type="text" required="required" name="cardNumber" [(ngModel)]="checkoutData.cardNumber" #cardNumber="ngModel">
-                                                        <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)">
-                                                            <div *ngIf="cardNumber.errors.required" class="c-red">
-                                                                Card Number is required
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+    <div class="form-row my-4">
+      <div class="col">
+        <button
+          class="btn btn-primary button action-btn black-btn"
+          id="btn-place-order"
+          type="button"
+          [disabled]="!checkoutForm.form.valid"
+          (click)="placeOrder()"
+        >
+          Place Order
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
 
-                                                <div class="form-row my-3">
-                                                    <div class="col-12 col-md-4">
-                                                        <label>Exp. Month</label>
-                                                        <select class="form-control" required="required" name="expMonth" [(ngModel)]="checkoutData.expMonth" #expMonth="ngModel">
-                                                            <option></option>
-                                                            <option *ngFor="let expMonth of checkoutStatic.expMonths">
-                                                                {{expMonth.text}}
-                                                            </option>
-                                                        </select>
-                                                        <div *ngIf="expMonth.invalid && (expMonth.dirty || expMonth.touched)">
-                                                            <div *ngIf="expMonth.errors.required" class="c-red">
-                                                                Exp. Month is required
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-md-4">
-                                                        <label>Exp. Year</label>
-                                                        <select class="form-control" required="required" name="expYear" [(ngModel)]="checkoutData.expYear" #expYear="ngModel">
-                                                            <option></option>
-                                                            <option *ngFor="let expYear of checkoutStatic.expYears">
-                                                                {{expYear.text}}
-                                                            </option>
-                                                        </select>
-                                                        <div *ngIf="expYear.invalid && (expYear.dirty || expYear.touched)">
-                                                            <div *ngIf="expYear.errors.required" class="c-red">
-                                                                Exp. Year is required
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-md-4">
-                                                        <label>CW</label>
-                                                        <input class="form-control" type="text" required="required" name="cw" maxlength="3" minlength="3" [(ngModel)]="checkoutData.cw" #cw="ngModel">
-                                                            <div *ngIf="cw.invalid && (cw.dirty || cw.touched)">
-                                                                <div *ngIf="cw.errors.required" class="c-red">
-                                                                    CW is required
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-row my-4">
-                                                        <div class="col">
-                                                            <button class="btn btn-primary button  action-btn black-btn" id="btn-place-order" type="button" [disabled]="!checkoutForm.form.valid" (click)="placeOrder()">
-                                                                Place Order
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-<app-footer></app-footer>                                            
+<app-footer></app-footer>

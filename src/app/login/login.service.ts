@@ -17,7 +17,7 @@ import { timer } from "rxjs/internal/observable/timer";
 })
 export class LoginService {
   private baseUrl = "/api/login/";
-  private loginTimer = timer(60000);
+  private loginTimer = timer(3600000);
   private loginSubscriber;
   private inOneHour = new Date(new Date().getTime() + 60 * 60 * 1000);
 
@@ -37,7 +37,6 @@ export class LoginService {
         this.router.navigate(["/home"]);
       }),
       catchError((error) => {
-        console.log("error", error);
         this.store.dispatch(new AddErrorAction(error.error));
         throw error;
       })

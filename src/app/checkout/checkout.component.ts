@@ -31,12 +31,10 @@ export class CheckoutComponent implements OnInit {
 
     checkoutStatic$.subscribe((checkoutStatic) => {
       this.checkoutStatic = checkoutStatic;
-      console.log("checkoutStatic", checkoutStatic);
     });
   };
 
   private placeOrder = () => {
-    console.log("checkoutData", this.checkoutData);
     this.checkoutService.placeOrder(this.checkoutData).subscribe();
   };
 }

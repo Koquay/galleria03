@@ -32,10 +32,9 @@ export class ProductComponent implements OnInit {
 
   private addToCart = () => {
     this.payload.productId = this.product._id;
-    console.log("payload", this.payload);
 
     if (!this.payload.quantity || !this.payload.size) {
-      window.alert("quantity and size required");
+      // window.alert("quantity and size required");
     }
 
     this.cartService.addToCart(this.payload).subscribe();
@@ -43,17 +42,14 @@ export class ProductComponent implements OnInit {
 
   private addSize = (size) => {
     this.payload.size = size;
-    console.log("payload", this.payload);
   };
 
   private addQuantity = (quantity) => {
     this.payload.quantity = quantity;
-    console.log("payload", this.payload);
   };
 
   private getSelectedProduct = () => {
     const productId = this.activatedRoute.snapshot.paramMap.get("productId");
-    console.log("productId", productId);
 
     this.store.dispatch(new GetProductAction(productId));
 
@@ -62,7 +58,6 @@ export class ProductComponent implements OnInit {
     };
     let product$ = this.store.select(productSelector);
     product$.subscribe((product) => {
-      console.log("product", product);
       this.product = product;
       this.currentImage = product.images[0];
     });
@@ -77,7 +72,6 @@ export class ProductComponent implements OnInit {
     let products$ = this.store.select(productsSelector);
     products$.subscribe((products) => {
       this.relatedProducts = products;
-      console.log("relatedProducts", this.relatedProducts);
     });
   };
 

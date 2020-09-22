@@ -14,6 +14,12 @@ const initialState = {
         text2: "ON",
         text3: "SUMMER COLLECTION",
       },
+      // {
+      //   image: "slider-1.jpg",
+      //   text1: "NEXT BIGGEST SALE",
+      //   text2: "ON",
+      //   text3: "SUMMER COLLECTION",
+      // },
     ],
 
     collections: [
@@ -53,7 +59,7 @@ const initialState = {
         },
         {
           image: ["product-6.jpg", "axfddsasda.jpg"],
-          designer: "consectetur adipiscing",
+          designer: "consectetur",
           listPrice: 150,
           price: 125,
           rating: 4,
@@ -90,7 +96,7 @@ const initialState = {
         },
         {
           image: ["product-8.jpg", "axfddsasda.jpg"],
-          designer: "consectetur adipiscing",
+          designer: "consectetur",
           listPrice: 150,
           price: 125,
           rating: 4,
@@ -127,7 +133,7 @@ const initialState = {
         },
         {
           image: "product-8.jpg",
-          designer: "consectetur adipiscing",
+          designer: "consectetur",
           listPrice: 150,
           price: 125,
           rating: 4,

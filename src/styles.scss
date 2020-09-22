@@ -1,23 +1,41 @@
 $primary: #ef5656;
+$charcoal: #6e6e6e;
+$light-charcoal: #d2d2d2;
+
+body {
+  font-family: "Roboto";
+
+  a {
+    cursor: pointer;
+    text-decoration: none !important;
+    color: $charcoal;
+  }
+
+  color: $charcoal;
+}
 
 .star {
-    font-size: 1.5rem;
-    color: rgb(204, 204, 204);;
-  }
-  .star2 {
-    font-size: 1.5rem;
-    color: rgb(204, 204, 204);;
-  }
-  .filled {
-    color: $primary;
-  }
-  .bad {
-    color: #deb0b0;
-  }
-  .filled.bad {
-    color: #ff1e1e;
-  } 
+  font-size: 1.5rem;
+  color: rgb(204, 204, 204);
+}
+.star2 {
+  font-size: 1.5rem;
+  color: rgb(204, 204, 204);
+}
+.filled {
+  color: $primary;
+}
+.bad {
+  color: #deb0b0;
+}
+.filled.bad {
+  color: #ff1e1e;
+}
 
-  .strike-through {
-    text-decoration: line-through;
+.strike-through {
+  text-decoration: line-through;
+}
+
+.mt-6 {
+  margin-top: 6rem;
 }

@@ -23,12 +23,9 @@ export class FooterComponent implements OnInit {
     let footer$ = this.store.select(footerSelector);
 
     footer$.subscribe((footerStaticData) => {
-      console.log("footerStaticData", footerStaticData);
-
       this.us = footerStaticData.us;
-      console.log("this.us", this.us);
+
       this.footerLinks = footerStaticData.footerLinks;
-      console.log("this.footerLinks", this.footerLinks);
     });
   };
 }

@@ -1,24 +1,30 @@
 $primary: #ef5656;
 $charcoal: #6e6e6e;
-$light-charcoal: #d2d2d2;
+$light-charcoal: #e29393;
+
+form {
+  margin-top: 5rem;
+}
 
 .c-red {
-    color: #B00020 !important;
+  color: #b00020 !important;
 }
 
 .page-title {
-    border-bottom: 3px solid $primary;
+  border-bottom: 3px solid $primary;
 }
 
-.px-10 {
+.px-lg-10 {
+  @media (min-width: 992px) {
     padding-left: 20rem;
     padding-right: 20rem;
+  }
 }
 
 .login-btn {
-    background-color: $primary;
-    color: white;
-    font-size: bold;
-    padding-left: 3rem;
-    padding-right: 3rem;
+  background-color: $primary;
+  color: white;
+  font-size: bold;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }

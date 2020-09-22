@@ -13,7 +13,6 @@ export class MessageComponent implements OnInit {
   private infoMessage;
   private message;
   private title;
-  private messageTimer = timer(600000);
   private messageSubscriber;
 
   constructor(private store: Store<any>) {}
@@ -29,18 +28,19 @@ export class MessageComponent implements OnInit {
     let message$ = this.store.select(messageSelector);
 
     message$.subscribe((message) => {
-      console.log("message", message);
       this.errorMessage = message.error;
       this.infoMessage = message.info;
       this.message = this.errorMessage || this.infoMessage;
       this.title = this.errorMessage ? "ERROR" : "INFO";
 
-      this.initMessageCloseTimer();
+      if (this.message) {
+        this.initMessageCloseTimer();
+      }
     });
   };
 
   private initMessageCloseTimer = () => {
-    this.messageSubscriber = this.messageTimer.subscribe(() => {
+    this.messageSubscriber = timer(60000).subscribe(() => {
       this.clearMessage();
     });
   };

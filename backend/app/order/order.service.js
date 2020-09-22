@@ -8,8 +8,6 @@ const jwt = require("jsonwebtoken");
 exports.placeOrder = async (req, res) => {
   const { orderData } = req.body;
 
-  console.log("orderData", orderData);
-
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,
@@ -21,11 +19,7 @@ exports.placeOrder = async (req, res) => {
       model: "Product",
     });
 
-    console.log("cart", cart);
-
     const { cartTotal, stripeTotal } = calculateCartTotal(cart.products);
-
-    console.log("{cartTotal, stripeTotal} ", { cartTotal, stripeTotal });
 
     const order = await new Order({
       user: userId,

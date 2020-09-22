@@ -24,14 +24,10 @@ export class CartComponent implements OnInit {
 
     cart$.subscribe((cart) => {
       this.cart = cart.cart;
-      console.log("cart", this.cart);
-      console.log("products", this.cart.products);
     });
   };
 
   private deleteItem = (productId, size) => {
-    console.log("remove productId, size", productId, size);
-
     this.cartService.removeItem(productId, size).subscribe(() => {
       this.getCart();
     });
@@ -42,7 +38,6 @@ export class CartComponent implements OnInit {
       return (acc += product.product.price * (product.quantity || 1));
     }, 0);
 
-    console.log("subtotal", subtotal);
     return subtotal;
   };
 
@@ -55,7 +50,6 @@ export class CartComponent implements OnInit {
   };
 
   private clearCart = () => {
-    console.log("clearing cart");
     this.cartService.clearCart().subscribe();
   };
 }

@@ -37,25 +37,20 @@ export class CollectionComponent implements OnInit {
     let minMaxPrices$ = this.store.select(minMaxPricesSelector);
 
     minMaxPrices$.subscribe((minMaxPrices) => {
-      console.log("minMaxPrices", minMaxPrices);
       this.minMaxPrices = minMaxPrices;
     });
   };
 
   private handleCategoryChange = (categoryName, categoryItem) => {
     this.setCategoryItemChecked(categoryName, categoryItem);
-    console.log("filters", this.filters);
+
     this.filterProducts();
   };
 
   private handlePriceChange = (changeValue) => {
-    console.log("changeValue", changeValue);
     this.filters.priceFilter.filterPrice.minPrice = changeValue;
     this.filters.priceFilter.filterPrice.maxPrice = this.minMaxPrices.maxPrice;
-    console.log(
-      "this.filters.priceFilter.filterPrice",
-      this.filters.priceFilter.filterPrice
-    );
+
     this.filterProducts();
   };
 

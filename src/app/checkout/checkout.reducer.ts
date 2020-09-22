@@ -1,9 +1,10 @@
-import { CheckoutActionUnion } from './checkout.action';
+import { CheckoutActionUnion } from "./checkout.action";
 
-export const CheckoutReducer = (state = initialState, action: CheckoutActionUnion) => {
-  console.log("Checkout ACTION TYPE", action.type);
+export const CheckoutReducer = (
+  state = initialState,
+  action: CheckoutActionUnion
+) => {
   switch (action.type) {
-
     default:
       return state;
   }

@@ -3,7 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import { tap, catchError } from "rxjs/operators";
 import { Store } from "@ngrx/store";
 import { CartAction } from "./cart.actions";
-import { ClearMessageAction, AddErrorAction } from '../shared/message/message/message.action';
+import {
+  ClearMessageAction,
+  AddErrorAction,
+} from "../shared/message/message/message.action";
 
 @Injectable({
   providedIn: "root",
@@ -15,14 +18,12 @@ export class CartService {
 
   public addToCart = (payload) => {
     this.store.dispatch(new ClearMessageAction());
-    
+
     return this.httpClient.put(`${this.baseUrl}/1`, payload).pipe(
       tap((cart) => {
-        console.log("cart", cart);
         this.store.dispatch(new CartAction(cart));
       }),
-      catchError(error => {
-        console.log("error", error);
+      catchError((error) => {
         this.store.dispatch(new AddErrorAction(error.error));
         throw error;
       })
@@ -38,11 +39,9 @@ export class CartService {
 
     return this.httpClient.delete(`${this.baseUrl}/1`, payload).pipe(
       tap((cart) => {
-        console.log("cart", cart);
         this.store.dispatch(new CartAction(cart));
       }),
-      catchError(error => {
-        console.log("error", error);
+      catchError((error) => {
         this.store.dispatch(new AddErrorAction(error.error));
         throw error;
       })
@@ -54,11 +53,9 @@ export class CartService {
 
     return this.httpClient.delete(`${this.baseUrl}/1/2`).pipe(
       tap((cart) => {
-        console.log("cart", cart);
         this.store.dispatch(new CartAction(cart));
       }),
-      catchError(error => {
-        console.log("error", error);
+      catchError((error) => {
         this.store.dispatch(new AddErrorAction(error.error));
         throw error;
       })

@@ -1,192 +1,236 @@
 <app-header></app-header>
 <div class="container">
-    <section id="section-image">
-        <div class="row mt-3 mt-lg-0">
-            <div class="col">
-                <img class="img-fluid" src="assets/img/blog-main-1.jpg">
-                    <div class="section-name">
-                        <span>SHOP</span>
-                    </div>
+  <section id="section-image">
+    <div class="row mt-3 mt-lg-0">
+      <div class="col">
+        <img class="img-fluid" src="assets/img/blog-main-1.jpg" />
+        <div class="section-name">
+          <span>SHOP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="products" class="mt-4">
+    <app-message></app-message>
+
+    <div class="row mt-3 mt-md-5">
+      <div class="col-12 col-md-2">
+        <div class="row mb-2">
+          <div class="col-12">
+            <h6 class="font-weight-bold">CATEGORIES</h6>
+            <hr class="mt-0" />
+          </div>
+
+          <div class="col pr-0">
+            <div role="tablist" id="accordion-1">
+              <div
+                class="card"
+                *ngFor="let category of filters.categories.category"
+              >
+                <div class="card-header py-0" role="tab">
+                  <h6 class="mb-0">
+                    <a
+                      data-toggle="collapse"
+                      aria-expanded="false"
+                      aria-controls="accordion-1 .item-1"
+                      href="{{category.href}}"
+                      class="w-100 font-weight-bold"
+                    >
+                      {{category.name}}<i class="fa fa-plus"></i>
+                    </a>
+                  </h6>
                 </div>
+                <div
+                  class="{{category.class}}"
+                  role="tabpanel"
+                  data-parent="#accordion-1"
+                >
+                  <div class="card-body py-1">
+                    <ul class="list-unstyled">
+                      <li class="pb-1" *ngFor="let item of category.items">
+                        <input
+                          type="checkbox"
+                          (change)="handleCategoryChange(category.name, item)"
+                          id="{{item.name}}"
+                        />
+                        <label class="ml-1">{{item.name}}<br /></label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-        <section id="products" class="mt-4">
-            <app-message></app-message>
-
+            <hr />
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
             <div class="row">
-                <div class="col-12 col-md-2">
-                    <div class="row">
-                        <div class="col-12">
-                            <h6 class="font-weight-bold">CATEGORIES</h6>
-                            <hr class="mt-0"></div>
-                            <div class="col pr-0">
-                                <div role="tablist" id="accordion-1">
-                                    <div class="card" *ngFor="let category of filters.categories.category">
-                                        <div class="card-header py-0" role="tab">
-                                            <h6 class="mb-0">
-                                                <a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-1" href={{category.href}} class="w-100 font-weight-bold">
-                                                    {{category.name}}<i class="fa fa-plus"></i>
-                                                </a>
-                                            </h6>
-                                        </div>
-                                        <div class={{category.class}} role="tabpanel" data-parent="#accordion-1">
-                                            <div class="card-body py-1">
-                                                <ul class="list-unstyled">
-                                                    <li class="pb-1" *ngFor="let item of category.items">
-                                                        <input type="checkbox" (change)="handleCategoryChange(category.name, item)" id={{item.name}}/>
-                                                        <label class="ml-1">{{item.name}}<br/></label>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr></div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6 class="font-weight-bold">PRICE</h6>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <input #changeValue type="range" data-toggle="tooltip" min={{minMaxPrices.minPrice}} max={{minMaxPrices.maxPrice}} data-bs-tooltip="" classname="custom-range w-100" title="$150" (change)="handlePriceChange(changeValue.value)"/>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col d-flex justify-content-between">
-                                            <span>${{minMaxPrices.minPrice}}</span>
-                                            <span>${{minMaxPrices.maxPrice}}</span>
-                                        </div>
-                                    </div>
-                                    <hr></div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col">
-                                        <h6 class="font-weight-bold">
-                                            <strong>COLOR</strong>
-                                        </h6>
-                                        <div class="row">
-                                            <div class="col d-flex justify-content-between" id="colors">
-                                                <a href="#">
-                                                    <i class="fa fa-square red"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <i class="fa fa-square brown"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <i class="fa fa-square black"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <i class="fa fa-square blue"></i>
-                                                </a>
-                                                <a href="#">
-                                                    <i class="fa fa-square green"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <hr></div>
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col">
-                                            <h6 class="font-weight-bold">
-                                                <strong>SIZE</strong>
-                                            </h6>
-                                            <div class="row">
-                                                <div class="col d-flex justify-content-between" id="size">
-                                                    <a href="#">
-                                                        <span>XS</span>
-                                                    </a>
-                                                    <a href="#">
-                                                        <span>S</span>
-                                                    </a>
-                                                    <a href="#">
-                                                        <span>M</span>
-                                                    </a>
-                                                    <a href="#">
-                                                        <span>L</span>
-                                                    </a>
-                                                    <a href="#">
-                                                        <span>XL</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <hr></div>
-                                        </div>
-                                    </div>
-                                    <div class="col" id="cards">
-                                        <div class="row">
-                                            <div class="col-12 col-md-4 col-lg-3 mb-2 mb-md-4" *ngFor='let product of products'>
-                                                <a [routerLink]="['/product', product._id]">
-                                                    <div class="card">
-                                                        <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{product.images[0]}}">
-                                                            <img class="card-img w-100 d-block img-2" src="assets/img/{{product.images[0]}}" style="opacity: 1;">
-                                                                <div class="card-body">
-                                                                    <span class="d-block">{{product.name}}</span>
-                                                                    <span class="d-inline-block mr-2 strike-through">
-                                                                        {{product.list_price | currency:'USD':'symbol-narrow'}}
-                                                                    </span>
-                                                                    <span class="d-inline-block font-weight-bold">
-                                                                        {{product.price | currency:'USD':'symbol-narrow'}}
-                                                                    </span>
-                                                                    <div class="rating">
-                                                                        <ngb-rating [(rate)]="product.rating" [max]="5">
-                                                                            <ng-template let-fill="fill" let-index="index">
-                                                                                <span class="star2" [class.filled]="fill === 100">&#9733;</span>
-                                                                            </ng-template>
-                                                                        </ngb-rating>
-
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-actions">
-                                                                    <i class="fa fa-search"></i>
-                                                                    <i class="fa fa-heart"></i>
-                                                                    <i class="fa fa-cart-arrow-down"></i>
-                                                                </div>
-                                                                <div class="add-to-cart d-none">
-                                                                    <span>Add to Cart</span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-3">
-                                                    <div class="col" id="pagination">
-                                                        <nav class="d-lg-flex justify-content-lg-center">
-                                                            <ul class="pagination">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="#">1</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="#">2</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="#">3</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="#">4</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="#">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="#" aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </nav>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                                <app-footer></app-footer>
+              <div class="col">
+                <h6 class="font-weight-bold">PRICE</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input
+                  #changeValue
+                  type="range"
+                  data-toggle="tooltip"
+                  min="{{minMaxPrices.minPrice}}"
+                  max="{{minMaxPrices.maxPrice}}"
+                  data-bs-tooltip=""
+                  classname="custom-range w-100"
+                  title="$150"
+                  (change)="handlePriceChange(changeValue.value)"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col d-flex justify-content-between">
+                <span>${{minMaxPrices.minPrice}}</span>
+                <span>${{minMaxPrices.maxPrice}}</span>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <h6 class="font-weight-bold">
+              <strong>COLOR</strong>
+            </h6>
+            <div class="row">
+              <div class="col d-flex justify-content-between" id="colors">
+                <a href="#">
+                  <i class="fa fa-square red"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-square brown"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-square black"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-square blue"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-square green"></i>
+                </a>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <h6 class="font-weight-bold">
+              <strong>SIZE</strong>
+            </h6>
+            <div class="row">
+              <div class="col d-flex justify-content-between" id="size">
+                <a href="#">
+                  <span>XS</span>
+                </a>
+                <a href="#">
+                  <span>S</span>
+                </a>
+                <a href="#">
+                  <span>M</span>
+                </a>
+                <a href="#">
+                  <span>L</span>
+                </a>
+                <a href="#">
+                  <span>XL</span>
+                </a>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <div class="col" id="cards">
+        <div class="row">
+          <div
+            class="col-12 col-md-4 col-lg-3 mb-3 mb-md-5"
+            *ngFor="let product of products"
+          >
+            <a [routerLink]="['/product', product._id]">
+              <div class="card">
+                <img
+                  class="img-fluid card-img-top w-100 d-block"
+                  src="assets/img/{{product.images[0]}}"
+                />
+                <img
+                  class="card-img w-100 d-block img-2"
+                  src="assets/img/{{product.images[0]}}"
+                  style="opacity: 1;"
+                />
+                <div class="card-body">
+                  <span class="d-block">{{product.name}}</span>
+                  <span class="d-inline-block mr-2 strike-through">
+                    {{product.list_price | currency:'USD':'symbol-narrow'}}
+                  </span>
+                  <span class="d-inline-block font-weight-bold">
+                    {{product.price | currency:'USD':'symbol-narrow'}}
+                  </span>
+                  <div class="rating">
+                    <ngb-rating [(rate)]="product.rating" [max]="5">
+                      <ng-template let-fill="fill" let-index="index">
+                        <span class="star2" [class.filled]="fill === 100"
+                          >&#9733;</span
+                        >
+                      </ng-template>
+                    </ngb-rating>
+                  </div>
+                </div>
+                <div class="product-actions">
+                  <i class="fa fa-search"></i>
+                  <i class="fa fa-heart"></i>
+                  <i class="fa fa-cart-arrow-down"></i>
+                </div>
+                <div class="add-to-cart d-none">
+                  <span>Add to Cart</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col" id="pagination">
+            <nav class="d-lg-flex justify-content-lg-center">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>
